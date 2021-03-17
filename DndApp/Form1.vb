@@ -242,4 +242,10 @@
         buttonUndoAllocation.Enabled = False
         attributeFinalizeButton.Enabled = False
     End Sub
+
+    Private Sub attributeHelpIconBox_Click(sender As Object, e As EventArgs) Handles attributeHelpIconBox.Click
+        Dim attributesHelpForm As New AttributeHelpForm 'Create an instance of a new attribute help form
+
+        attributesHelpForm.ShowDialog() 'Load the attribute help form
+    End Sub
 End Class
