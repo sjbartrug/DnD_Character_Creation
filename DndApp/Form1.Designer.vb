@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class characterSheetForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class characterSheetForm
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.nameTextField = New System.Windows.Forms.TextBox()
         Me.nameSubmitButton = New System.Windows.Forms.Button()
@@ -50,9 +50,9 @@ Partial Class characterSheetForm
         Me.attributeAllocationLabel = New System.Windows.Forms.Label()
         Me.attributeListBox = New System.Windows.Forms.ListBox()
         Me.rollListBox = New System.Windows.Forms.ListBox()
-        Me.allocateButton = New System.Windows.Forms.Button()
-        Me.attributeFinalizeButton = New System.Windows.Forms.Button()
-        Me.buttonUndoAllocation = New System.Windows.Forms.Button()
+        Me.allocateAttributeButton = New System.Windows.Forms.Button()
+        Me.finalizeAttributeButton = New System.Windows.Forms.Button()
+        Me.undoAttributeButton = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.labelStr = New System.Windows.Forms.Label()
         Me.labelDex = New System.Windows.Forms.Label()
@@ -67,7 +67,20 @@ Partial Class characterSheetForm
         Me.labelWisValue = New System.Windows.Forms.Label()
         Me.labelChaValue = New System.Windows.Forms.Label()
         Me.attributeHelpIconBox = New System.Windows.Forms.PictureBox()
+        Me.raceGroupBox = New System.Windows.Forms.GroupBox()
+        Me.subraceGroupBox = New System.Windows.Forms.GroupBox()
+        Me.classGroupBox = New System.Windows.Forms.GroupBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.skillsListBox = New System.Windows.Forms.ListBox()
+        Me.assignedSkillsListBox = New System.Windows.Forms.ListBox()
+        Me.undoSkillsButton = New System.Windows.Forms.Button()
+        Me.finalizeSkillsButton = New System.Windows.Forms.Button()
+        Me.allocateSkillsButton = New System.Windows.Forms.Button()
         CType(Me.attributeHelpIconBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.raceGroupBox.SuspendLayout()
+        Me.subraceGroupBox.SuspendLayout()
+        Me.classGroupBox.SuspendLayout()
         Me.SuspendLayout()
         '
         'nameTextField
@@ -81,7 +94,7 @@ Partial Class characterSheetForm
         '
         'nameSubmitButton
         '
-        Me.nameSubmitButton.Location = New System.Drawing.Point(275, 152)
+        Me.nameSubmitButton.Location = New System.Drawing.Point(302, 150)
         Me.nameSubmitButton.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.nameSubmitButton.Name = "nameSubmitButton"
         Me.nameSubmitButton.Size = New System.Drawing.Size(86, 29)
@@ -92,7 +105,7 @@ Partial Class characterSheetForm
         'humanRadioButton
         '
         Me.humanRadioButton.AutoSize = True
-        Me.humanRadioButton.Location = New System.Drawing.Point(14, 273)
+        Me.humanRadioButton.Location = New System.Drawing.Point(6, 27)
         Me.humanRadioButton.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.humanRadioButton.Name = "humanRadioButton"
         Me.humanRadioButton.Size = New System.Drawing.Size(82, 24)
@@ -104,7 +117,7 @@ Partial Class characterSheetForm
         'elfRadioButton
         '
         Me.elfRadioButton.AutoSize = True
-        Me.elfRadioButton.Location = New System.Drawing.Point(119, 273)
+        Me.elfRadioButton.Location = New System.Drawing.Point(94, 27)
         Me.elfRadioButton.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.elfRadioButton.Name = "elfRadioButton"
         Me.elfRadioButton.Size = New System.Drawing.Size(47, 24)
@@ -116,7 +129,7 @@ Partial Class characterSheetForm
         'tieflingRadioButton
         '
         Me.tieflingRadioButton.AutoSize = True
-        Me.tieflingRadioButton.Location = New System.Drawing.Point(178, 271)
+        Me.tieflingRadioButton.Location = New System.Drawing.Point(147, 27)
         Me.tieflingRadioButton.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.tieflingRadioButton.Name = "tieflingRadioButton"
         Me.tieflingRadioButton.Size = New System.Drawing.Size(80, 24)
@@ -127,7 +140,7 @@ Partial Class characterSheetForm
         '
         'raceSubmitButton
         '
-        Me.raceSubmitButton.Location = New System.Drawing.Point(275, 271)
+        Me.raceSubmitButton.Location = New System.Drawing.Point(302, 274)
         Me.raceSubmitButton.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.raceSubmitButton.Name = "raceSubmitButton"
         Me.raceSubmitButton.Size = New System.Drawing.Size(86, 31)
@@ -138,7 +151,7 @@ Partial Class characterSheetForm
         'fighterRadioButton
         '
         Me.fighterRadioButton.AutoSize = True
-        Me.fighterRadioButton.Location = New System.Drawing.Point(169, 545)
+        Me.fighterRadioButton.Location = New System.Drawing.Point(179, 27)
         Me.fighterRadioButton.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.fighterRadioButton.Name = "fighterRadioButton"
         Me.fighterRadioButton.Size = New System.Drawing.Size(76, 24)
@@ -150,7 +163,7 @@ Partial Class characterSheetForm
         'barbarianRadioButton
         '
         Me.barbarianRadioButton.AutoSize = True
-        Me.barbarianRadioButton.Location = New System.Drawing.Point(14, 545)
+        Me.barbarianRadioButton.Location = New System.Drawing.Point(6, 27)
         Me.barbarianRadioButton.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.barbarianRadioButton.Name = "barbarianRadioButton"
         Me.barbarianRadioButton.Size = New System.Drawing.Size(94, 24)
@@ -162,7 +175,7 @@ Partial Class characterSheetForm
         'monkRadioButton
         '
         Me.monkRadioButton.AutoSize = True
-        Me.monkRadioButton.Location = New System.Drawing.Point(98, 545)
+        Me.monkRadioButton.Location = New System.Drawing.Point(106, 27)
         Me.monkRadioButton.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.monkRadioButton.Name = "monkRadioButton"
         Me.monkRadioButton.Size = New System.Drawing.Size(67, 24)
@@ -173,7 +186,7 @@ Partial Class characterSheetForm
         '
         'classSubmitButton
         '
-        Me.classSubmitButton.Location = New System.Drawing.Point(275, 540)
+        Me.classSubmitButton.Location = New System.Drawing.Point(302, 561)
         Me.classSubmitButton.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.classSubmitButton.Name = "classSubmitButton"
         Me.classSubmitButton.Size = New System.Drawing.Size(86, 31)
@@ -184,7 +197,7 @@ Partial Class characterSheetForm
         'highElfRadioButton
         '
         Me.highElfRadioButton.AutoSize = True
-        Me.highElfRadioButton.Location = New System.Drawing.Point(40, 413)
+        Me.highElfRadioButton.Location = New System.Drawing.Point(6, 27)
         Me.highElfRadioButton.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.highElfRadioButton.Name = "highElfRadioButton"
         Me.highElfRadioButton.Size = New System.Drawing.Size(83, 24)
@@ -196,7 +209,7 @@ Partial Class characterSheetForm
         'woodElfRadioButton
         '
         Me.woodElfRadioButton.AutoSize = True
-        Me.woodElfRadioButton.Location = New System.Drawing.Point(141, 411)
+        Me.woodElfRadioButton.Location = New System.Drawing.Point(95, 27)
         Me.woodElfRadioButton.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.woodElfRadioButton.Name = "woodElfRadioButton"
         Me.woodElfRadioButton.Size = New System.Drawing.Size(91, 24)
@@ -207,7 +220,7 @@ Partial Class characterSheetForm
         '
         'subraceSubmitButton
         '
-        Me.subraceSubmitButton.Location = New System.Drawing.Point(275, 408)
+        Me.subraceSubmitButton.Location = New System.Drawing.Point(302, 420)
         Me.subraceSubmitButton.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.subraceSubmitButton.Name = "subraceSubmitButton"
         Me.subraceSubmitButton.Size = New System.Drawing.Size(86, 31)
@@ -219,7 +232,7 @@ Partial Class characterSheetForm
         '
         Me.subrace.AutoSize = True
         Me.subrace.Font = New System.Drawing.Font("Bookman Old Style", 20.25!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
-        Me.subrace.Location = New System.Drawing.Point(63, 337)
+        Me.subrace.Location = New System.Drawing.Point(73, 355)
         Me.subrace.Name = "subrace"
         Me.subrace.Size = New System.Drawing.Size(148, 38)
         Me.subrace.TabIndex = 13
@@ -229,7 +242,7 @@ Partial Class characterSheetForm
         '
         Me.raceLabel.AutoSize = True
         Me.raceLabel.Font = New System.Drawing.Font("Bookman Old Style", 20.25!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
-        Me.raceLabel.Location = New System.Drawing.Point(88, 209)
+        Me.raceLabel.Location = New System.Drawing.Point(101, 209)
         Me.raceLabel.Name = "raceLabel"
         Me.raceLabel.Size = New System.Drawing.Size(95, 38)
         Me.raceLabel.TabIndex = 14
@@ -239,7 +252,7 @@ Partial Class characterSheetForm
         '
         Me.nameLabel.AutoSize = True
         Me.nameLabel.Font = New System.Drawing.Font("Bookman Old Style", 20.25!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
-        Me.nameLabel.Location = New System.Drawing.Point(88, 89)
+        Me.nameLabel.Location = New System.Drawing.Point(88, 92)
         Me.nameLabel.Name = "nameLabel"
         Me.nameLabel.Size = New System.Drawing.Size(108, 38)
         Me.nameLabel.TabIndex = 15
@@ -249,7 +262,7 @@ Partial Class characterSheetForm
         '
         Me.classLabel.AutoSize = True
         Me.classLabel.Font = New System.Drawing.Font("Bookman Old Style", 20.25!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
-        Me.classLabel.Location = New System.Drawing.Point(73, 481)
+        Me.classLabel.Location = New System.Drawing.Point(88, 496)
         Me.classLabel.Name = "classLabel"
         Me.classLabel.Size = New System.Drawing.Size(108, 38)
         Me.classLabel.TabIndex = 16
@@ -279,7 +292,7 @@ Partial Class characterSheetForm
         '
         Me.statRollLabel.AutoSize = True
         Me.statRollLabel.Font = New System.Drawing.Font("Bookman Old Style", 20.25!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
-        Me.statRollLabel.Location = New System.Drawing.Point(521, 49)
+        Me.statRollLabel.Location = New System.Drawing.Point(530, 49)
         Me.statRollLabel.Name = "statRollLabel"
         Me.statRollLabel.Size = New System.Drawing.Size(151, 38)
         Me.statRollLabel.TabIndex = 19
@@ -287,7 +300,7 @@ Partial Class characterSheetForm
         '
         'rollOneTextField
         '
-        Me.rollOneTextField.Location = New System.Drawing.Point(486, 152)
+        Me.rollOneTextField.Location = New System.Drawing.Point(486, 125)
         Me.rollOneTextField.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.rollOneTextField.Name = "rollOneTextField"
         Me.rollOneTextField.PlaceholderText = "Roll 1"
@@ -296,7 +309,7 @@ Partial Class characterSheetForm
         '
         'rollTwoTextField
         '
-        Me.rollTwoTextField.Location = New System.Drawing.Point(559, 153)
+        Me.rollTwoTextField.Location = New System.Drawing.Point(559, 126)
         Me.rollTwoTextField.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.rollTwoTextField.Name = "rollTwoTextField"
         Me.rollTwoTextField.PlaceholderText = "Roll 2"
@@ -305,7 +318,7 @@ Partial Class characterSheetForm
         '
         'rollThreeTextField
         '
-        Me.rollThreeTextField.Location = New System.Drawing.Point(632, 153)
+        Me.rollThreeTextField.Location = New System.Drawing.Point(632, 126)
         Me.rollThreeTextField.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.rollThreeTextField.Name = "rollThreeTextField"
         Me.rollThreeTextField.PlaceholderText = "Roll 3"
@@ -314,7 +327,7 @@ Partial Class characterSheetForm
         '
         'rollDiceButton
         '
-        Me.rollDiceButton.Location = New System.Drawing.Point(559, 101)
+        Me.rollDiceButton.Location = New System.Drawing.Point(710, 125)
         Me.rollDiceButton.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.rollDiceButton.Name = "rollDiceButton"
         Me.rollDiceButton.Size = New System.Drawing.Size(66, 31)
@@ -324,7 +337,7 @@ Partial Class characterSheetForm
         '
         'rollValueSubmitButton
         '
-        Me.rollValueSubmitButton.Location = New System.Drawing.Point(722, 153)
+        Me.rollValueSubmitButton.Location = New System.Drawing.Point(548, 173)
         Me.rollValueSubmitButton.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.rollValueSubmitButton.Name = "rollValueSubmitButton"
         Me.rollValueSubmitButton.Size = New System.Drawing.Size(86, 31)
@@ -336,7 +349,7 @@ Partial Class characterSheetForm
         '
         Me.attributeAllocationLabel.AutoSize = True
         Me.attributeAllocationLabel.Font = New System.Drawing.Font("Bookman Old Style", 20.25!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
-        Me.attributeAllocationLabel.Location = New System.Drawing.Point(446, 225)
+        Me.attributeAllocationLabel.Location = New System.Drawing.Point(455, 263)
         Me.attributeAllocationLabel.Name = "attributeAllocationLabel"
         Me.attributeAllocationLabel.Size = New System.Drawing.Size(321, 38)
         Me.attributeAllocationLabel.TabIndex = 25
@@ -347,50 +360,50 @@ Partial Class characterSheetForm
         Me.attributeListBox.FormattingEnabled = True
         Me.attributeListBox.ItemHeight = 20
         Me.attributeListBox.Items.AddRange(New Object() {"Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"})
-        Me.attributeListBox.Location = New System.Drawing.Point(601, 295)
+        Me.attributeListBox.Location = New System.Drawing.Point(586, 333)
         Me.attributeListBox.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.attributeListBox.Name = "attributeListBox"
-        Me.attributeListBox.Size = New System.Drawing.Size(86, 124)
+        Me.attributeListBox.Size = New System.Drawing.Size(110, 204)
         Me.attributeListBox.TabIndex = 26
         '
         'rollListBox
         '
         Me.rollListBox.FormattingEnabled = True
         Me.rollListBox.ItemHeight = 20
-        Me.rollListBox.Location = New System.Drawing.Point(486, 295)
+        Me.rollListBox.Location = New System.Drawing.Point(468, 333)
         Me.rollListBox.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.rollListBox.Name = "rollListBox"
-        Me.rollListBox.Size = New System.Drawing.Size(85, 124)
+        Me.rollListBox.Size = New System.Drawing.Size(112, 204)
         Me.rollListBox.TabIndex = 27
         '
-        'allocateButton
+        'allocateAttributeButton
         '
-        Me.allocateButton.Location = New System.Drawing.Point(485, 456)
-        Me.allocateButton.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.allocateButton.Name = "allocateButton"
-        Me.allocateButton.Size = New System.Drawing.Size(86, 31)
-        Me.allocateButton.TabIndex = 28
-        Me.allocateButton.Text = "Allocate"
-        Me.allocateButton.UseVisualStyleBackColor = True
+        Me.allocateAttributeButton.Location = New System.Drawing.Point(710, 345)
+        Me.allocateAttributeButton.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.allocateAttributeButton.Name = "allocateAttributeButton"
+        Me.allocateAttributeButton.Size = New System.Drawing.Size(86, 31)
+        Me.allocateAttributeButton.TabIndex = 28
+        Me.allocateAttributeButton.Text = "Allocate"
+        Me.allocateAttributeButton.UseVisualStyleBackColor = True
         '
-        'attributeFinalizeButton
+        'finalizeAttributeButton
         '
-        Me.attributeFinalizeButton.Location = New System.Drawing.Point(539, 513)
-        Me.attributeFinalizeButton.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.attributeFinalizeButton.Name = "attributeFinalizeButton"
-        Me.attributeFinalizeButton.Size = New System.Drawing.Size(86, 31)
-        Me.attributeFinalizeButton.TabIndex = 29
-        Me.attributeFinalizeButton.Text = "Finalize"
-        Me.attributeFinalizeButton.UseVisualStyleBackColor = True
+        Me.finalizeAttributeButton.Location = New System.Drawing.Point(710, 487)
+        Me.finalizeAttributeButton.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.finalizeAttributeButton.Name = "finalizeAttributeButton"
+        Me.finalizeAttributeButton.Size = New System.Drawing.Size(86, 31)
+        Me.finalizeAttributeButton.TabIndex = 29
+        Me.finalizeAttributeButton.Text = "Finalize"
+        Me.finalizeAttributeButton.UseVisualStyleBackColor = True
         '
-        'buttonUndoAllocation
+        'undoAttributeButton
         '
-        Me.buttonUndoAllocation.Location = New System.Drawing.Point(593, 458)
-        Me.buttonUndoAllocation.Name = "buttonUndoAllocation"
-        Me.buttonUndoAllocation.Size = New System.Drawing.Size(94, 29)
-        Me.buttonUndoAllocation.TabIndex = 30
-        Me.buttonUndoAllocation.Text = "Undo"
-        Me.buttonUndoAllocation.UseVisualStyleBackColor = True
+        Me.undoAttributeButton.Location = New System.Drawing.Point(710, 418)
+        Me.undoAttributeButton.Name = "undoAttributeButton"
+        Me.undoAttributeButton.Size = New System.Drawing.Size(86, 29)
+        Me.undoAttributeButton.TabIndex = 30
+        Me.undoAttributeButton.Text = "Undo"
+        Me.undoAttributeButton.UseVisualStyleBackColor = True
         '
         'Label2
         '
@@ -526,11 +539,120 @@ Partial Class characterSheetForm
         Me.attributeHelpIconBox.TabIndex = 44
         Me.attributeHelpIconBox.TabStop = False
         '
+        'raceGroupBox
+        '
+        Me.raceGroupBox.Controls.Add(Me.humanRadioButton)
+        Me.raceGroupBox.Controls.Add(Me.elfRadioButton)
+        Me.raceGroupBox.Controls.Add(Me.tieflingRadioButton)
+        Me.raceGroupBox.Location = New System.Drawing.Point(14, 250)
+        Me.raceGroupBox.Name = "raceGroupBox"
+        Me.raceGroupBox.Size = New System.Drawing.Size(250, 71)
+        Me.raceGroupBox.TabIndex = 45
+        Me.raceGroupBox.TabStop = False
+        '
+        'subraceGroupBox
+        '
+        Me.subraceGroupBox.Controls.Add(Me.highElfRadioButton)
+        Me.subraceGroupBox.Controls.Add(Me.woodElfRadioButton)
+        Me.subraceGroupBox.Location = New System.Drawing.Point(51, 396)
+        Me.subraceGroupBox.Name = "subraceGroupBox"
+        Me.subraceGroupBox.Size = New System.Drawing.Size(190, 61)
+        Me.subraceGroupBox.TabIndex = 46
+        Me.subraceGroupBox.TabStop = False
+        '
+        'classGroupBox
+        '
+        Me.classGroupBox.Controls.Add(Me.barbarianRadioButton)
+        Me.classGroupBox.Controls.Add(Me.monkRadioButton)
+        Me.classGroupBox.Controls.Add(Me.fighterRadioButton)
+        Me.classGroupBox.Location = New System.Drawing.Point(12, 537)
+        Me.classGroupBox.Name = "classGroupBox"
+        Me.classGroupBox.Size = New System.Drawing.Size(263, 64)
+        Me.classGroupBox.TabIndex = 47
+        Me.classGroupBox.TabStop = False
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Bookman Old Style", 20.25!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
+        Me.Label3.Location = New System.Drawing.Point(908, 297)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(264, 38)
+        Me.Label3.TabIndex = 48
+        Me.Label3.Text = "Proficient Skills"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label4.Location = New System.Drawing.Point(986, 345)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(101, 22)
+        Me.Label4.TabIndex = 49
+        Me.Label4.Text = "(Choose Two)"
+        '
+        'skillsListBox
+        '
+        Me.skillsListBox.FormattingEnabled = True
+        Me.skillsListBox.ItemHeight = 20
+        Me.skillsListBox.Location = New System.Drawing.Point(908, 396)
+        Me.skillsListBox.Name = "skillsListBox"
+        Me.skillsListBox.Size = New System.Drawing.Size(110, 164)
+        Me.skillsListBox.TabIndex = 50
+        '
+        'assignedSkillsListBox
+        '
+        Me.assignedSkillsListBox.FormattingEnabled = True
+        Me.assignedSkillsListBox.ItemHeight = 20
+        Me.assignedSkillsListBox.Location = New System.Drawing.Point(1024, 396)
+        Me.assignedSkillsListBox.Name = "assignedSkillsListBox"
+        Me.assignedSkillsListBox.Size = New System.Drawing.Size(110, 164)
+        Me.assignedSkillsListBox.TabIndex = 51
+        '
+        'undoSkillsButton
+        '
+        Me.undoSkillsButton.Location = New System.Drawing.Point(1149, 466)
+        Me.undoSkillsButton.Name = "undoSkillsButton"
+        Me.undoSkillsButton.Size = New System.Drawing.Size(86, 29)
+        Me.undoSkillsButton.TabIndex = 54
+        Me.undoSkillsButton.Text = "Undo"
+        Me.undoSkillsButton.UseVisualStyleBackColor = True
+        '
+        'finalizeSkillsButton
+        '
+        Me.finalizeSkillsButton.Location = New System.Drawing.Point(1149, 515)
+        Me.finalizeSkillsButton.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.finalizeSkillsButton.Name = "finalizeSkillsButton"
+        Me.finalizeSkillsButton.Size = New System.Drawing.Size(86, 31)
+        Me.finalizeSkillsButton.TabIndex = 53
+        Me.finalizeSkillsButton.Text = "Finalize"
+        Me.finalizeSkillsButton.UseVisualStyleBackColor = True
+        '
+        'allocateSkillsButton
+        '
+        Me.allocateSkillsButton.Location = New System.Drawing.Point(1149, 416)
+        Me.allocateSkillsButton.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.allocateSkillsButton.Name = "allocateSkillsButton"
+        Me.allocateSkillsButton.Size = New System.Drawing.Size(86, 31)
+        Me.allocateSkillsButton.TabIndex = 52
+        Me.allocateSkillsButton.Text = "Allocate"
+        Me.allocateSkillsButton.UseVisualStyleBackColor = True
+        '
         'characterSheetForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1313, 637)
+        Me.Controls.Add(Me.undoSkillsButton)
+        Me.Controls.Add(Me.finalizeSkillsButton)
+        Me.Controls.Add(Me.allocateSkillsButton)
+        Me.Controls.Add(Me.assignedSkillsListBox)
+        Me.Controls.Add(Me.skillsListBox)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.classGroupBox)
+        Me.Controls.Add(Me.subraceGroupBox)
+        Me.Controls.Add(Me.raceGroupBox)
         Me.Controls.Add(Me.attributeHelpIconBox)
         Me.Controls.Add(Me.labelChaValue)
         Me.Controls.Add(Me.labelWisValue)
@@ -545,9 +667,9 @@ Partial Class characterSheetForm
         Me.Controls.Add(Me.labelDex)
         Me.Controls.Add(Me.labelStr)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.buttonUndoAllocation)
-        Me.Controls.Add(Me.attributeFinalizeButton)
-        Me.Controls.Add(Me.allocateButton)
+        Me.Controls.Add(Me.undoAttributeButton)
+        Me.Controls.Add(Me.finalizeAttributeButton)
+        Me.Controls.Add(Me.allocateAttributeButton)
         Me.Controls.Add(Me.rollListBox)
         Me.Controls.Add(Me.attributeListBox)
         Me.Controls.Add(Me.attributeAllocationLabel)
@@ -564,22 +686,20 @@ Partial Class characterSheetForm
         Me.Controls.Add(Me.raceLabel)
         Me.Controls.Add(Me.subrace)
         Me.Controls.Add(Me.subraceSubmitButton)
-        Me.Controls.Add(Me.woodElfRadioButton)
-        Me.Controls.Add(Me.highElfRadioButton)
         Me.Controls.Add(Me.classSubmitButton)
-        Me.Controls.Add(Me.monkRadioButton)
-        Me.Controls.Add(Me.barbarianRadioButton)
-        Me.Controls.Add(Me.fighterRadioButton)
         Me.Controls.Add(Me.raceSubmitButton)
-        Me.Controls.Add(Me.tieflingRadioButton)
-        Me.Controls.Add(Me.elfRadioButton)
-        Me.Controls.Add(Me.humanRadioButton)
         Me.Controls.Add(Me.nameSubmitButton)
         Me.Controls.Add(Me.nameTextField)
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "characterSheetForm"
         Me.Text = "Character Attributes"
         CType(Me.attributeHelpIconBox, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.raceGroupBox.ResumeLayout(False)
+        Me.raceGroupBox.PerformLayout()
+        Me.subraceGroupBox.ResumeLayout(False)
+        Me.subraceGroupBox.PerformLayout()
+        Me.classGroupBox.ResumeLayout(False)
+        Me.classGroupBox.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -614,21 +734,31 @@ Partial Class characterSheetForm
     Friend WithEvents attributeAllocationLabel As Label
     Friend WithEvents attributeListBox As ListBox
     Friend WithEvents rollListBox As ListBox
-    Friend WithEvents allocateButton As Button
-    Friend WithEvents attributeFinalizeButton As Button
-	Friend WithEvents buttonUndoAllocation As Button
-	Friend WithEvents Label2 As Label
-	Friend WithEvents labelStr As Label
-	Friend WithEvents labelDex As Label
-	Friend WithEvents labelCon As Label
-	Friend WithEvents labelInt As Label
-	Friend WithEvents labelWis As Label
-	Friend WithEvents labelCha As Label
-	Friend WithEvents labelStrValue As Label
-	Friend WithEvents labelDexValue As Label
-	Friend WithEvents labelConValue As Label
-	Friend WithEvents labelIntValue As Label
-	Friend WithEvents labelWisValue As Label
-	Friend WithEvents labelChaValue As Label
-	Friend WithEvents attributeHelpIconBox As PictureBox
+    Friend WithEvents allocateAttributeButton As Button
+    Friend WithEvents finalizeAttributeButton As Button
+    Friend WithEvents undoAttributeButton As Button
+    Friend WithEvents Label2 As Label
+    Friend WithEvents labelStr As Label
+    Friend WithEvents labelDex As Label
+    Friend WithEvents labelCon As Label
+    Friend WithEvents labelInt As Label
+    Friend WithEvents labelWis As Label
+    Friend WithEvents labelCha As Label
+    Friend WithEvents labelStrValue As Label
+    Friend WithEvents labelDexValue As Label
+    Friend WithEvents labelConValue As Label
+    Friend WithEvents labelIntValue As Label
+    Friend WithEvents labelWisValue As Label
+    Friend WithEvents labelChaValue As Label
+    Friend WithEvents attributeHelpIconBox As PictureBox
+    Friend WithEvents raceGroupBox As GroupBox
+    Friend WithEvents subraceGroupBox As GroupBox
+    Friend WithEvents classGroupBox As GroupBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents skillsListBox As ListBox
+    Friend WithEvents assignedSkillsListBox As ListBox
+    Friend WithEvents undoSkillsButton As Button
+    Friend WithEvents finalizeSkillsButton As Button
+    Friend WithEvents allocateSkillsButton As Button
 End Class

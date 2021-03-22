@@ -5,10 +5,18 @@
     Const DIE_ROLLS_TOTAL As Integer = 6
 
     ' Class-level variables
+    Dim characterName As String
+    Dim characterRace As Integer
+    Dim characterClass As Integer
+    Dim characterProficiencyBonus As Integer = L1_PROFICIENCY_BONUS
     Dim currentDieRollCount As Integer = 0
     Dim currentDieSum As Integer
     Dim dieRollSums As New List(Of Integer)
-    Dim lastAssignedStack As New Stack(Of AssignedAttribute)
+    Dim lastAssignedAttributeStack As New Stack(Of AssignedAttribute)
+    Dim finalizedAttributes(NUM_OF_ATTRIBUTES) As Integer
+    Dim savingThrows(NUM_OF_ATTRIBUTES) As Integer
+    Dim skillProficiencies(NUM_OF_SKILLS) As Boolean
+    Dim lastAssignedSkillStack As New Stack(Of String)
 
     'An event handler for when the form loads, this is good for setting initial properties of controls
     Private Sub characterSheetForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -16,92 +24,94 @@
         rollTwoTextField.Enabled = False
         rollThreeTextField.Enabled = False
         rollValueSubmitButton.Enabled = False
-        allocateButton.Enabled = False
-        buttonUndoAllocation.Enabled = False
-        attributeFinalizeButton.Enabled = False
+        allocateAttributeButton.Enabled = False
+        undoAttributeButton.Enabled = False
+        finalizeAttributeButton.Enabled = False
+        raceGroupBox.Enabled = False
+        raceSubmitButton.Enabled = False
+        subraceGroupBox.Enabled = False
+        subraceSubmitButton.Enabled = False
+        humanRadioButton.Checked = True
+        highElfRadioButton.Checked = True
+        barbarianRadioButton.Checked = True
+        classGroupBox.Enabled = False
+        classSubmitButton.Enabled = False
+        rollDiceButton.Enabled = False
+
+        For currentIndex = 0 To NUM_OF_SKILLS
+            skillProficiencies(currentIndex) = False
+        Next
     End Sub
     Private Sub nameSubmitButton_Click(sender As Object, e As EventArgs) Handles nameSubmitButton.Click
+        Dim tempName As String = nameTextField.Text() 'Get the name from the text field
 
-    End Sub
+        If tempName.Length() >= 2 And tempName.Length() <= 25 Then
+            characterName = tempName 'Assign the name if it's between 2-25 chars long
 
-    Private Sub nameTextField_TextChanged(sender As Object, e As EventArgs) Handles nameTextField.TextChanged
-
-    End Sub
-
-    Private Sub humanRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles humanRadioButton.CheckedChanged
-
-    End Sub
-
-    Private Sub elfRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles elfRadioButton.CheckedChanged
-
-    End Sub
-
-    Private Sub tieflingRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles tieflingRadioButton.CheckedChanged
-
+            nameTextField.Enabled = False
+            nameSubmitButton.Enabled = False 'Disable this action once it's finalized
+            raceGroupBox.Enabled = True
+            raceSubmitButton.Enabled = True
+        End If
     End Sub
 
     Private Sub raceSubmitButton_Click(sender As Object, e As EventArgs) Handles raceSubmitButton.Click
+        If humanRadioButton.Checked = True Then
+            characterRace = DndRace.HUMAN
 
-    End Sub
+            raceSubmitButton.Enabled = False
+            raceGroupBox.Enabled = False
+            classGroupBox.Enabled = True
+            classSubmitButton.Enabled = True
 
-    Private Sub barbarianRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles barbarianRadioButton.CheckedChanged
+        ElseIf elfRadioButton.Checked = True Then
+            raceSubmitButton.Enabled = False
+            raceGroupBox.Enabled = False
+            subraceGroupBox.Enabled = True
+            subraceSubmitButton.Enabled = True
 
-    End Sub
+        Else
+            characterRace = DndRace.TIEFLING
 
-    Private Sub monkRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles monkRadioButton.CheckedChanged
-
-    End Sub
-
-    Private Sub fighterRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles fighterRadioButton.CheckedChanged
-
-    End Sub
-
-    Private Sub classSubmitButton_Click(sender As Object, e As EventArgs) Handles classSubmitButton.Click
-
-    End Sub
-
-    Private Sub woodElfRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles woodElfRadioButton.CheckedChanged
-
+            raceSubmitButton.Enabled = False
+            raceGroupBox.Enabled = False
+            classGroupBox.Enabled = True
+            classSubmitButton.Enabled = True
+        End If
     End Sub
 
     Private Sub subraceSubmitButton_Click(sender As Object, e As EventArgs) Handles subraceSubmitButton.Click
+        If highElfRadioButton.Checked = True Then
+            characterRace = DndRace.HIGH_ELF
+        Else
+            characterRace = DndRace.WOOD_ELF
+        End If
 
+        subraceGroupBox.Enabled = False
+        subraceSubmitButton.Enabled = False
+        classGroupBox.Enabled = True
+        classSubmitButton.Enabled = True
     End Sub
 
-    Private Sub highElfRadioButton_CheckedChanged(sender As Object, e As EventArgs) Handles highElfRadioButton.CheckedChanged
+    Private Sub classSubmitButton_Click(sender As Object, e As EventArgs) Handles classSubmitButton.Click
+        If barbarianRadioButton.Checked = True Then
+            characterClass = DndClass.BARBARIAN
+        ElseIf monkRadioButton.Checked = True Then
+            characterClass = DndClass.MONK
+        Else
+            characterClass = DndClass.FIGHTER
+        End If
 
-    End Sub
+        labelStr.Text() += " (+" + GetRacialBonus(characterRace, DndAttribute.STRENGTH).ToString() + ")"
+        labelDex.Text() += " (+" + GetRacialBonus(characterRace, DndAttribute.DEXTERITY).ToString() + ")"
+        labelCon.Text() += " (+" + GetRacialBonus(characterRace, DndAttribute.CONSTITUTION).ToString() + ")"
+        labelInt.Text() += " (+" + GetRacialBonus(characterRace, DndAttribute.INTELLIGENCE).ToString() + ")"
+        labelWis.Text() += " (+" + GetRacialBonus(characterRace, DndAttribute.WISDOM).ToString() + ")"
+        labelCha.Text() += " (+" + GetRacialBonus(characterRace, DndAttribute.CHARISMA).ToString() + ")"
 
-    Private Sub subraceLabel_Click(sender As Object, e As EventArgs) Handles subrace.Click
-
-    End Sub
-
-    Private Sub raceLabel_Click(sender As Object, e As EventArgs) Handles raceLabel.Click
-
-    End Sub
-
-    Private Sub nameLabel_Click(sender As Object, e As EventArgs) Handles nameLabel.Click
-
-    End Sub
-
-    Private Sub classLabel_Click(sender As Object, e As EventArgs) Handles classLabel.Click
-
-    End Sub
-
-    Private Sub dndLabel_Click(sender As Object, e As EventArgs) Handles dndLabel.Click
-
-    End Sub
-
-    Private Sub rollOneTextField_TextChanged(sender As Object, e As EventArgs) Handles rollOneTextField.TextChanged
-
-    End Sub
-
-    Private Sub rollTwoTextField_TextChanged(sender As Object, e As EventArgs) Handles rollTwoTextField.TextChanged
-
-    End Sub
-
-    Private Sub rollThreeTextField_TextChanged(sender As Object, e As EventArgs) Handles rollThreeTextField.TextChanged
-
+        classGroupBox.Enabled = False
+        classSubmitButton.Enabled = False
+        rollDiceButton.Enabled = True
     End Sub
 
     Private Sub rollDiceButton_Click(sender As Object, e As EventArgs) Handles rollDiceButton.Click
@@ -122,14 +132,6 @@
         rollDiceButton.Enabled = False 'Don't allow a reroll until the current roll is submitted
     End Sub
 
-    Private Sub attributeAllocationLabel_Click(sender As Object, e As EventArgs) Handles attributeAllocationLabel.Click
-
-    End Sub
-
-    Private Sub attributeListBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles attributeListBox.SelectedIndexChanged
-
-    End Sub
-
     Private Sub rollValueSubmitButton_Click(sender As Object, e As EventArgs) Handles rollValueSubmitButton.Click
         rollValueSubmitButton.Enabled = False
 
@@ -146,37 +148,37 @@
         If currentDieRollCount <> DIE_ROLLS_TOTAL Then
             rollDiceButton.Enabled = True 'If 6 rolls have not been made, allow another roll
         Else
-            allocateButton.Enabled = True 'Once 6 rolls are made, enable the allocate button in the next section
+            allocateAttributeButton.Enabled = True 'Once 6 rolls are made, enable the allocate button in the next section
             rollListBox.SelectedIndex = 0 'And select the first indices of both lists
             attributeListBox.SelectedIndex = 0
         End If
     End Sub
 
-    Private Sub allocateButton_Click(sender As Object, e As EventArgs) Handles allocateButton.Click
+    Private Sub allocateButton_Click(sender As Object, e As EventArgs) Handles allocateAttributeButton.Click
         ' Keep track of the currently assigned attribute name, point value, and their indices on their lists
         Dim selectedAttributeIndex As Integer = attributeListBox.SelectedIndex
         Dim selectedAttributeName As String = attributeListBox.Items(selectedAttributeIndex).ToString()
         Dim selectedRollIndex As Integer = rollListBox.SelectedIndex
-        Dim selectedRollValueText As String = dieRollSums.Item(selectedRollIndex).ToString()
+        Dim selectedRollValue As Integer = dieRollSums.Item(selectedRollIndex)
 
         ' Push this data onto a stack to enable easy reversal of actions
-        lastAssignedStack.Push(New AssignedAttribute(selectedAttributeIndex, selectedAttributeName,
+        lastAssignedAttributeStack.Push(New AssignedAttribute(selectedAttributeIndex, selectedAttributeName,
                                                          selectedRollIndex, dieRollSums.Item(selectedRollIndex)))
 
         ' Find the name of the currently assigned attribute and set its points label to the assigned value
         Select Case selectedAttributeName
             Case "Strength"
-                labelStrValue.Text = selectedRollValueText
+                labelStrValue.Text = (selectedRollValue + GetRacialBonus(characterRace, DndAttribute.STRENGTH)).ToString()
             Case "Dexterity"
-                labelDexValue.Text = selectedRollValueText
+                labelDexValue.Text = (selectedRollValue + GetRacialBonus(characterRace, DndAttribute.DEXTERITY)).ToString()
             Case "Constitution"
-                labelConValue.Text = selectedRollValueText
+                labelConValue.Text = (selectedRollValue + GetRacialBonus(characterRace, DndAttribute.CONSTITUTION)).ToString()
             Case "Intelligence"
-                labelIntValue.Text = selectedRollValueText
+                labelIntValue.Text = (selectedRollValue + GetRacialBonus(characterRace, DndAttribute.INTELLIGENCE)).ToString()
             Case "Wisdom"
-                labelWisValue.Text = selectedRollValueText
+                labelWisValue.Text = (selectedRollValue + GetRacialBonus(characterRace, DndAttribute.WISDOM)).ToString()
             Case "Charisma"
-                labelChaValue.Text = selectedRollValueText
+                labelChaValue.Text = (selectedRollValue + GetRacialBonus(characterRace, DndAttribute.CHARISMA)).ToString()
         End Select
 
         ' Remove the currently selected items from the list boxes and list
@@ -184,26 +186,26 @@
         rollListBox.Items.RemoveAt(selectedRollIndex)
         dieRollSums.RemoveAt(selectedRollIndex)
 
-        buttonUndoAllocation.Enabled = True
+        undoAttributeButton.Enabled = True
 
         If attributeListBox.Items.Count = 0 And rollListBox.Items.Count = 0 Then
-            allocateButton.Enabled = False ' If both lists are now empty, disable the allocate button
-            attributeFinalizeButton.Enabled = True
+            allocateAttributeButton.Enabled = False ' If both lists are now empty, disable the allocate button
+            finalizeAttributeButton.Enabled = True
         Else
             rollListBox.SelectedIndex = 0 ' Reset the selected indices to 0
             attributeListBox.SelectedIndex = 0
         End If
     End Sub
 
-    Private Sub ButtonUndoAllocation_Click(sender As Object, e As EventArgs) Handles buttonUndoAllocation.Click
-        Dim lastAttributeIndex As Integer = lastAssignedStack.Peek().IndexOfLastAttribute
-        Dim lastAttributeName As String = lastAssignedStack.Peek().NameOfLastAttribute
-        Dim lastRollIndex As Integer = lastAssignedStack.Peek().IndexOfLastRoll
-        Dim lastRollValue As Integer = lastAssignedStack.Peek().ValueOfLastRoll
+    Private Sub ButtonUndoAllocation_Click(sender As Object, e As EventArgs) Handles undoAttributeButton.Click
+        Dim lastAttributeIndex As Integer = lastAssignedAttributeStack.Peek().IndexOfLastAttribute
+        Dim lastAttributeName As String = lastAssignedAttributeStack.Peek().NameOfLastAttribute
+        Dim lastRollIndex As Integer = lastAssignedAttributeStack.Peek().IndexOfLastRoll
+        Dim lastRollValue As Integer = lastAssignedAttributeStack.Peek().ValueOfLastRoll
 
         If attributeListBox.Items.Count = 0 And rollListBox.Items.Count = 0 Then
-            allocateButton.Enabled = True 'If the lists were empty, re-enable the allocate button
-            attributeFinalizeButton.Enabled = False 'and disable the finalize button
+            allocateAttributeButton.Enabled = True 'If the lists were empty, re-enable the allocate button
+            finalizeAttributeButton.Enabled = False 'and disable the finalize button
         End If
 
         'Find the name of the last assigned attribute and set the points label back to zero
@@ -227,25 +229,77 @@
         rollListBox.Items.Insert(lastRollIndex, lastRollValue.ToString())
         dieRollSums.Insert(lastRollIndex, lastRollValue)
 
-        lastAssignedStack.Pop() ' Pop this set of attributes off the stack
+        lastAssignedAttributeStack.Pop() ' Pop this set of attributes off the stack
 
         rollListBox.SelectedIndex = 0 ' Reset the selected indices in the list boxes to 0
         attributeListBox.SelectedIndex = 0
 
-        If lastAssignedStack.Count = 0 Then
-            buttonUndoAllocation.Enabled = False ' If the stack is now empty, disable the undo button
+        If lastAssignedAttributeStack.Count = 0 Then
+            undoAttributeButton.Enabled = False ' If the stack is now empty, disable the undo button
         End If
     End Sub
 
-    Private Sub attributeFinalizeButton_Click(sender As Object, e As EventArgs) Handles attributeFinalizeButton.Click
-        allocateButton.Enabled = False ' Disable all allocation buttons after finalizing assigned attributes
-        buttonUndoAllocation.Enabled = False
-        attributeFinalizeButton.Enabled = False
+    Private Sub attributeFinalizeButton_Click(sender As Object, e As EventArgs) Handles finalizeAttributeButton.Click
+        Dim skillNames As String()
+
+        allocateAttributeButton.Enabled = False ' Disable all allocation buttons after finalizing assigned attributes
+        undoAttributeButton.Enabled = False
+        finalizeAttributeButton.Enabled = False
+
+        Do While lastAssignedAttributeStack.Count > 0
+            Select Case lastAssignedAttributeStack.Peek().NameOfLastAttribute
+                Case "Strength"
+                    finalizedAttributes(DndAttribute.STRENGTH) = lastAssignedAttributeStack.Peek().ValueOfLastRoll + GetRacialBonus(characterRace, DndAttribute.STRENGTH)
+                Case "Dexterity"
+                    finalizedAttributes(DndAttribute.DEXTERITY) = lastAssignedAttributeStack.Peek().ValueOfLastRoll + GetRacialBonus(characterRace, DndAttribute.DEXTERITY)
+                Case "Constitution"
+                    finalizedAttributes(DndAttribute.CONSTITUTION) = lastAssignedAttributeStack.Peek().ValueOfLastRoll + GetRacialBonus(characterRace, DndAttribute.CONSTITUTION)
+                Case "Intelligence"
+                    finalizedAttributes(DndAttribute.INTELLIGENCE) = lastAssignedAttributeStack.Peek().ValueOfLastRoll + GetRacialBonus(characterRace, DndAttribute.INTELLIGENCE)
+                Case "Wisdom"
+                    finalizedAttributes(DndAttribute.WISDOM) = lastAssignedAttributeStack.Peek().ValueOfLastRoll + GetRacialBonus(characterRace, DndAttribute.WISDOM)
+                Case "Charisma"
+                    finalizedAttributes(DndAttribute.CHARISMA) = lastAssignedAttributeStack.Peek().ValueOfLastRoll + GetRacialBonus(characterRace, DndAttribute.CHARISMA)
+            End Select
+
+            lastAssignedAttributeStack.Pop()
+        Loop
+
+        skillNames = GetClassSkillList(characterClass)
+
+        For currentIndex = 0 To (skillNames.Length - 1)
+            skillsListBox.Items.Add(skillNames(currentIndex))
+        Next
+
+        skillsListBox.SelectedIndex = 0
     End Sub
 
     Private Sub attributeHelpIconBox_Click(sender As Object, e As EventArgs) Handles attributeHelpIconBox.Click
-        Dim attributesHelpForm As New AttributeHelpForm 'Create an instance of a new attribute help form
+        If attributeHelpFormCount = 0 Then
+            Dim attributesHelpForm As New AttributeHelpForm 'Create an instance of a new attribute help form
 
-        attributesHelpForm.ShowDialog() 'Load the attribute help form
+            attributeHelpFormCount += 1
+
+            attributesHelpForm.Show() 'Load the attribute help form
+        End If
+    End Sub
+    Private Sub allocateSkillsButton_Click(sender As Object, e As EventArgs) Handles allocateSkillsButton.Click
+        If assignedSkillsListBox.Items.Count() < 2 Then
+            Dim currentIndex As Integer = skillsListBox.SelectedIndex
+            Dim currentSkill As String = skillsListBox.Items(currentIndex).ToString()
+
+            skillsListBox.Items.RemoveAt(currentIndex)
+            assignedSkillsListBox.Items.Add(currentSkill)
+        End If
+    End Sub
+
+    Private Sub undoSkillsButton_Click(sender As Object, e As EventArgs) Handles undoSkillsButton.Click
+
+    End Sub
+
+    Private Sub finalizeSkillsButton_Click(sender As Object, e As EventArgs) Handles finalizeSkillsButton.Click
+        allocateSkillsButton.Enabled = False
+        undoSkillsButton.Enabled = False
+        finalizeSkillsButton.Enabled = False
     End Sub
 End Class
