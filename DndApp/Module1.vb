@@ -5,7 +5,7 @@
 	Public Const NUM_OF_SKILLS As Integer = 18
 	Public Const L1_PROFICIENCY_BONUS As Integer = 2
 
-	Public attributeHelpFormCount As Integer = 0
+	Public HelpFormNumberInteger As Integer = 0
 
 	'Module level
 	Dim DndDiceRNG As New Random

@@ -63,7 +63,7 @@ Partial Class CharacterSheetForm
         Me.labelIntValue = New System.Windows.Forms.Label()
         Me.labelWisValue = New System.Windows.Forms.Label()
         Me.labelChaValue = New System.Windows.Forms.Label()
-        Me.attributeHelpIconBox = New System.Windows.Forms.PictureBox()
+        Me.AttributeHelpButton = New System.Windows.Forms.PictureBox()
         Me.RaceGroupBox = New System.Windows.Forms.GroupBox()
         Me.SubraceGroupBox = New System.Windows.Forms.GroupBox()
         Me.ClassGroupBox = New System.Windows.Forms.GroupBox()
@@ -82,13 +82,27 @@ Partial Class CharacterSheetForm
         Me.Label7 = New System.Windows.Forms.Label()
         Me.DiceRollGroupBox = New System.Windows.Forms.GroupBox()
         Me.AttributesGroupBox = New System.Windows.Forms.GroupBox()
-        CType(Me.attributeHelpIconBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.NameHelpBox = New System.Windows.Forms.PictureBox()
+        Me.RaceHelpBox = New System.Windows.Forms.PictureBox()
+        Me.SubraceHelpBox = New System.Windows.Forms.PictureBox()
+        Me.ClassHelpBox = New System.Windows.Forms.PictureBox()
+        Me.StatHelpBox = New System.Windows.Forms.PictureBox()
+        Me.AllocationHelpBox = New System.Windows.Forms.PictureBox()
+        Me.ProficienciesHelpBox = New System.Windows.Forms.PictureBox()
+        CType(Me.AttributeHelpButton, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RaceGroupBox.SuspendLayout()
         Me.SubraceGroupBox.SuspendLayout()
         Me.ClassGroupBox.SuspendLayout()
         CType(Me.DnDLogoImage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DiceRollGroupBox.SuspendLayout()
         Me.AttributesGroupBox.SuspendLayout()
+        CType(Me.NameHelpBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RaceHelpBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SubraceHelpBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ClassHelpBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.StatHelpBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AllocationHelpBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProficienciesHelpBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'NameTextField
@@ -506,16 +520,17 @@ Partial Class CharacterSheetForm
         Me.labelChaValue.TabIndex = 43
         Me.labelChaValue.Text = "0"
         '
-        'attributeHelpIconBox
+        'AttributeHelpButton
         '
-        Me.attributeHelpIconBox.BackgroundImage = Global.DndApp.My.Resources.Resources.dndhelpicon
-        Me.attributeHelpIconBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.attributeHelpIconBox.Location = New System.Drawing.Point(1091, 27)
-        Me.attributeHelpIconBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.attributeHelpIconBox.Name = "attributeHelpIconBox"
-        Me.attributeHelpIconBox.Size = New System.Drawing.Size(44, 38)
-        Me.attributeHelpIconBox.TabIndex = 44
-        Me.attributeHelpIconBox.TabStop = False
+        Me.AttributeHelpButton.BackgroundImage = Global.DndApp.My.Resources.Resources.dndhelpicon
+        Me.AttributeHelpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.AttributeHelpButton.Location = New System.Drawing.Point(1091, 27)
+        Me.AttributeHelpButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.AttributeHelpButton.Name = "AttributeHelpButton"
+        Me.AttributeHelpButton.Size = New System.Drawing.Size(44, 38)
+        Me.AttributeHelpButton.TabIndex = 44
+        Me.AttributeHelpButton.TabStop = False
+        Me.AttributeHelpButton.Visible = False
         '
         'RaceGroupBox
         '
@@ -722,11 +737,101 @@ Partial Class CharacterSheetForm
         Me.AttributesGroupBox.TabStop = False
         Me.AttributesGroupBox.Visible = False
         '
+        'NameHelpBox
+        '
+        Me.NameHelpBox.BackgroundImage = Global.DndApp.My.Resources.Resources.dndhelpicon
+        Me.NameHelpBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.NameHelpBox.Location = New System.Drawing.Point(237, 127)
+        Me.NameHelpBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.NameHelpBox.Name = "NameHelpBox"
+        Me.NameHelpBox.Size = New System.Drawing.Size(44, 38)
+        Me.NameHelpBox.TabIndex = 58
+        Me.NameHelpBox.TabStop = False
+        '
+        'RaceHelpBox
+        '
+        Me.RaceHelpBox.BackgroundImage = Global.DndApp.My.Resources.Resources.dndhelpicon
+        Me.RaceHelpBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.RaceHelpBox.Location = New System.Drawing.Point(81, 216)
+        Me.RaceHelpBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.RaceHelpBox.Name = "RaceHelpBox"
+        Me.RaceHelpBox.Size = New System.Drawing.Size(44, 38)
+        Me.RaceHelpBox.TabIndex = 59
+        Me.RaceHelpBox.TabStop = False
+        Me.RaceHelpBox.Visible = False
+        '
+        'SubraceHelpBox
+        '
+        Me.SubraceHelpBox.BackgroundImage = Global.DndApp.My.Resources.Resources.dndhelpicon
+        Me.SubraceHelpBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.SubraceHelpBox.Location = New System.Drawing.Point(207, 319)
+        Me.SubraceHelpBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.SubraceHelpBox.Name = "SubraceHelpBox"
+        Me.SubraceHelpBox.Size = New System.Drawing.Size(44, 38)
+        Me.SubraceHelpBox.TabIndex = 60
+        Me.SubraceHelpBox.TabStop = False
+        Me.SubraceHelpBox.Visible = False
+        '
+        'ClassHelpBox
+        '
+        Me.ClassHelpBox.BackgroundImage = Global.DndApp.My.Resources.Resources.dndhelpicon
+        Me.ClassHelpBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.ClassHelpBox.Location = New System.Drawing.Point(103, 436)
+        Me.ClassHelpBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ClassHelpBox.Name = "ClassHelpBox"
+        Me.ClassHelpBox.Size = New System.Drawing.Size(44, 38)
+        Me.ClassHelpBox.TabIndex = 61
+        Me.ClassHelpBox.TabStop = False
+        Me.ClassHelpBox.Visible = False
+        '
+        'StatHelpBox
+        '
+        Me.StatHelpBox.BackgroundImage = Global.DndApp.My.Resources.Resources.dndhelpicon
+        Me.StatHelpBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.StatHelpBox.Location = New System.Drawing.Point(702, 129)
+        Me.StatHelpBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.StatHelpBox.Name = "StatHelpBox"
+        Me.StatHelpBox.Size = New System.Drawing.Size(44, 38)
+        Me.StatHelpBox.TabIndex = 62
+        Me.StatHelpBox.TabStop = False
+        Me.StatHelpBox.Visible = False
+        '
+        'AllocationHelpBox
+        '
+        Me.AllocationHelpBox.BackgroundImage = Global.DndApp.My.Resources.Resources.dndhelpicon
+        Me.AllocationHelpBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.AllocationHelpBox.Location = New System.Drawing.Point(685, 325)
+        Me.AllocationHelpBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.AllocationHelpBox.Name = "AllocationHelpBox"
+        Me.AllocationHelpBox.Size = New System.Drawing.Size(44, 38)
+        Me.AllocationHelpBox.TabIndex = 63
+        Me.AllocationHelpBox.TabStop = False
+        Me.AllocationHelpBox.Visible = False
+        '
+        'ProficienciesHelpBox
+        '
+        Me.ProficienciesHelpBox.BackgroundImage = Global.DndApp.My.Resources.Resources.dndhelpicon
+        Me.ProficienciesHelpBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.ProficienciesHelpBox.Location = New System.Drawing.Point(1054, 271)
+        Me.ProficienciesHelpBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ProficienciesHelpBox.Name = "ProficienciesHelpBox"
+        Me.ProficienciesHelpBox.Size = New System.Drawing.Size(44, 38)
+        Me.ProficienciesHelpBox.TabIndex = 64
+        Me.ProficienciesHelpBox.TabStop = False
+        Me.ProficienciesHelpBox.Visible = False
+        '
         'CharacterSheetForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1175, 541)
+        Me.Controls.Add(Me.ProficienciesHelpBox)
+        Me.Controls.Add(Me.AllocationHelpBox)
+        Me.Controls.Add(Me.StatHelpBox)
+        Me.Controls.Add(Me.ClassHelpBox)
+        Me.Controls.Add(Me.SubraceHelpBox)
+        Me.Controls.Add(Me.RaceHelpBox)
+        Me.Controls.Add(Me.NameHelpBox)
         Me.Controls.Add(Me.AttributesGroupBox)
         Me.Controls.Add(Me.DiceRollGroupBox)
         Me.Controls.Add(Me.DnDLogoImage)
@@ -739,7 +844,7 @@ Partial Class CharacterSheetForm
         Me.Controls.Add(Me.ClassGroupBox)
         Me.Controls.Add(Me.SubraceGroupBox)
         Me.Controls.Add(Me.RaceGroupBox)
-        Me.Controls.Add(Me.attributeHelpIconBox)
+        Me.Controls.Add(Me.AttributeHelpButton)
         Me.Controls.Add(Me.CharacterAttributesLabel)
         Me.Controls.Add(Me.UndoAttributeButton)
         Me.Controls.Add(Me.FinalizeAttributeButton)
@@ -763,7 +868,7 @@ Partial Class CharacterSheetForm
         Me.Controls.Add(Me.NameTextField)
         Me.Name = "CharacterSheetForm"
         Me.Text = "D&D Character Creation"
-        CType(Me.attributeHelpIconBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AttributeHelpButton, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RaceGroupBox.ResumeLayout(False)
         Me.RaceGroupBox.PerformLayout()
         Me.SubraceGroupBox.ResumeLayout(False)
@@ -775,6 +880,13 @@ Partial Class CharacterSheetForm
         Me.DiceRollGroupBox.PerformLayout()
         Me.AttributesGroupBox.ResumeLayout(False)
         Me.AttributesGroupBox.PerformLayout()
+        CType(Me.NameHelpBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RaceHelpBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SubraceHelpBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ClassHelpBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.StatHelpBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AllocationHelpBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProficienciesHelpBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -822,7 +934,7 @@ Partial Class CharacterSheetForm
     Friend WithEvents labelIntValue As Label
     Friend WithEvents labelWisValue As Label
     Friend WithEvents labelChaValue As Label
-    Friend WithEvents attributeHelpIconBox As PictureBox
+    Friend WithEvents AttributeHelpButton As PictureBox
     Friend WithEvents RaceGroupBox As GroupBox
     Friend WithEvents SubraceGroupBox As GroupBox
     Friend WithEvents ClassGroupBox As GroupBox
@@ -841,4 +953,11 @@ Partial Class CharacterSheetForm
     Friend WithEvents Label7 As Label
     Friend WithEvents DiceRollGroupBox As GroupBox
     Friend WithEvents AttributesGroupBox As GroupBox
+    Friend WithEvents NameHelpBox As PictureBox
+    Friend WithEvents RaceHelpBox As PictureBox
+    Friend WithEvents SubraceHelpBox As PictureBox
+    Friend WithEvents ClassHelpBox As PictureBox
+    Friend WithEvents StatHelpBox As PictureBox
+    Friend WithEvents AllocationHelpBox As PictureBox
+    Friend WithEvents ProficienciesHelpBox As PictureBox
 End Class

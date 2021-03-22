@@ -1,7 +1,6 @@
-﻿Public Class AttributeHelpForm
+﻿Public Class HelpForm
     Private Sub closeAttributeHelpButton_Click(sender As Object, e As EventArgs) Handles closeAttributeHelpButton.Click
-        attributeHelpFormCount -= 1
-
+        HelpFormNumberInteger -= 1
         Me.Close()
     End Sub
 End Class
