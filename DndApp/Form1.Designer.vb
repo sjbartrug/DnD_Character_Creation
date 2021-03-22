@@ -608,6 +608,7 @@ Partial Class CharacterSheetForm
         '
         'UndoSkillsButton
         '
+        Me.UndoSkillsButton.Enabled = False
         Me.UndoSkillsButton.Location = New System.Drawing.Point(1048, 398)
         Me.UndoSkillsButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.UndoSkillsButton.Name = "UndoSkillsButton"
@@ -619,6 +620,7 @@ Partial Class CharacterSheetForm
         '
         'FinalizeSkillsButton
         '
+        Me.FinalizeSkillsButton.Enabled = False
         Me.FinalizeSkillsButton.Location = New System.Drawing.Point(1048, 434)
         Me.FinalizeSkillsButton.Name = "FinalizeSkillsButton"
         Me.FinalizeSkillsButton.Size = New System.Drawing.Size(75, 23)

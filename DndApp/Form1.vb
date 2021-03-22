@@ -46,6 +46,7 @@
             SubraceGroupBox.Visible = True
             SubraceSubmitButton.Visible = True
             SubraceHelpBox.Visible = True
+            RaceSubmitButton.Enabled = False
 
         ElseIf TieflingRadioButton.Checked = True Then
             CharacterRace = DndRace.TIEFLING
@@ -198,8 +199,8 @@
 
         If AttributeListBox.Items.Count = 0 And RollListBox.Items.Count = 0 Then
             AllocateAttributeButton.Enabled = False ' If both lists are now empty, disable the allocate button
+            FinalizeAttributeButton.Enabled = True
             FinalizeAttributeButton.Visible = True
-            UndoAttributeButton.Enabled = True
             AttributeHelpButton.Visible = True
         Else
             RollListBox.SelectedIndex = 0 ' Reset the selected indices to 0
@@ -213,10 +214,8 @@
         Dim lastRollIndex As Integer = lastAssignedAttributeStack.Peek().IndexOfLastRoll
         Dim lastRollValue As Integer = lastAssignedAttributeStack.Peek().ValueOfLastRoll
 
-        If AttributeListBox.Items.Count = 0 And RollListBox.Items.Count = 0 Then
-            AllocateAttributeButton.Enabled = True 'If the lists were empty, re-enable the allocate button
-            FinalizeAttributeButton.Enabled = False 'and disable the finalize button
-        End If
+        AllocateAttributeButton.Enabled = True 'If the lists were empty, re-enable the allocate button
+        FinalizeAttributeButton.Enabled = False 'and disable the finalize button
 
         'Find the name of the last assigned attribute and set the points label back to zero
         Select Case lastAttributeName
@@ -335,6 +334,11 @@
             AssignedSkillsListBox.Items.Add(currentSkill)
             UndoSkillsButton.Enabled = True
 
+            If AssignedSkillsListBox.Items.Count = 2 Then
+                FinalizeSkillsButton.Enabled = True
+                FinalizeSkillsButton.Visible = True
+            End If
+
         End If
     End Sub
 
@@ -342,10 +346,9 @@
         Dim lastSkillIndex As Integer = lastAssignedSkillStack.Peek().IndexOfLastProficiency
         Dim lastSkillName As String = lastAssignedSkillStack.Peek().NameOfLastProficiency
 
-        If SkillsListBox.Items.Count = 0 And AssignedSkillsListBox.Items.Count = 0 Then
-            AllocateSkillsButton.Enabled = False 'If the lists were empty, re-enable the allocate button
-            FinalizeSkillsButton.Enabled = True 'and disable the finalize button
-        End If
+        AllocateSkillsButton.Enabled = True 'If the lists were empty, re-enable the allocate button
+        FinalizeSkillsButton.Enabled = False 'and disable the finalize button
+
         ' Add the last selected items back into their list boxes and list at the appropriate indices
         SkillsListBox.Items.Insert(lastSkillIndex, lastSkillName)
 
@@ -440,6 +443,53 @@ able to maintain a low profile in wooded areas, percipitation, and the like."
             HelpFormNumberInteger += 1
             Dim ClassHelpForm As New HelpForm 'Create an instance of a new attribute help form
             ClassHelpForm.HelpTitleLabel.Text = "How to Pick a Class"
+            ClassHelpForm.HelpTextBox.Text = "Choosing a Class:
+Pick a class for your Dungeons & Dragons character. Depending on your choice, your character will
+use certain attributes (like strength or agility) to their advantage. They will also have access 
+to different abilities, weapons, fighting styles, armor, and skills which they exemplify.
+
+Barbarian
+Barbarians are a very physical class. They are trained to use a variety of melee weapons and armor,
+but they are also able to defend themselves well when unprotected. Barbarians possess a
+considerable amount of physical power and vitality, and they are better in a pinch with these
+types of situations. Barbarians are vicious, and they use this to their advantage in battle
+to do more damage, protect themselves, and further get themselves out of a pinch. Barbarians
+can exemplify animal handling, athletics, intimidation, nature, perception, and survival.
+
+Beginner Barbarian
+When you are allocating attribute points, strength is the most important. Constitution is also
+important across the board, but it is especially important to a barbarian.
+
+Monk
+Monks are also a very physical class, but they rely more on agility than brute force. They are
+trained to use lighter melee weapons, but they often prefer to protect themselves with their 
+agility instead of armor. Monks possess exemplary agility and strength, and they are better in 
+a pinch with these types of situations. Monks are trained to use their body as a weapon, causing 
+damage through their agility and sometimes landing an extra attack. Monks can exemplify acrobatics,
+athletics, history, insight, religion, and stealth.
+
+Beginner Monk
+When you are allocating attribute points, dexterity is the most important. Wisdom is also
+an important trait for a monk. Constitution is always important, so don't neglect it either.
+
+Fighters
+Fighters, another physical class, can be adept in using melee weapons, ranged weapons, and armor.
+Fighters typically favor one combat style over another, and they either focus on attacking from
+a distance, protecting themselves and their allies, or excelling at close combat. Fighters also
+possess considerable physical power and vitality, and they are better in a pinch with these types
+of situations. Fighters can sometimes continue battling despite having sustained injuries. Fighters
+can exemplify acrobatics, animal handling, athletics, history, insight, intimidation, perception,
+and survival.
+
+Beginner Fighter
+When you are allocating attribute points, strength and dexterity are equally important. Strength
+will favor a melee-based fighter, and dexterity will favor a ranged-based fighter. Constitution
+is also important, so don't neglect it either.
+
+Using the Form:
+Using your mouse, click on the button next to the race you want to choose. This should place
+a small black dot inside of your selection.
+When you are satisfied with your choice, click on the Submit button. "
 
             ClassHelpForm.Show() 'Load the attribute help form
         End If
@@ -450,6 +500,16 @@ able to maintain a low profile in wooded areas, percipitation, and the like."
             HelpFormNumberInteger += 1
             Dim StatHelpForm As New HelpForm 'Create an instance of a new attribute help form
             StatHelpForm.HelpTitleLabel.Text = "How to Roll for Stats"
+            StatHelpForm.HelpTextBox.Text = "Rolling Stats:
+This program rolls three simulated six-sided dice, each containing a random value between 1 and 6.
+These three rolls are added together, and the final score (between 3 and 18) can be assigned to
+one of the six attributes every Dungeons & Dragons character has. Because there are six attributes,
+six scores will be rolled before proceeding to the next step.
+
+Using the Form:
+Using your mouse, click on the Roll button. This will roll the three simulated dice. Once the dice
+have been rolled, use your mouse to click on the Submit button. This will add the score to a list
+which will be used to assign the six scores to each attribute."
 
             StatHelpForm.Show() 'Load the attribute help form
         End If
@@ -460,6 +520,54 @@ able to maintain a low profile in wooded areas, percipitation, and the like."
             HelpFormNumberInteger += 1
             Dim AllocationHelpForm As New HelpForm 'Create an instance of a new attribute help form
             AllocationHelpForm.HelpTitleLabel.Text = "How to Allocate Stats"
+            AllocationHelpForm.HelpTextBox.Text = "Allocating Attributes:
+This is where you choose which scores are assigned to which attributes. Keep in mind that each score
+can only be used once, so use the higher scores on attributes that are more important to your class
+and gameplay style. Never neglect your constitution.
+
+What Attributes Do:
+Strength
+Strength is used for anything involving a physical application of force. This is useful for executing
+melee attacks, lifting items, carrying a heavier load, or breaking something. Strength also comes in
+handy when navigating difficult terrain. Strength is most important to barbarians and melee-based
+fighters.
+
+Dexterity
+Dexterity is good for anything involving reaction time, speed, and a delicate touch. This is useful
+for executing ranged attacks, breaking and entering, stealing, visual distraction, escaping, 
+and being covert. Dexterity also comes in handy when navigating unstable terrain. Dexterity is most
+important to monks and range-based fighters.
+
+Constitution
+Constitution is good for anything involving endurance, being damaged, or otherwise being able to
+endure threats to one's life. This is useful for going on long journeys, going without basic
+needs, and enduring the effects of things like toxins. Constitution is always important, as it's what
+your character's hit points are partially based on. 
+
+Intelligence
+Intelligence is good for anything involving wit, memory, or problem-solving. This is useful for
+solving puzzles, remembering information, remembering how to do something, and impersonating others.
+This can also be used for casting some magical spells.
+
+Wisdom
+Wisdom is good for anything involving situational awareness and prudent judgment. This is useful for
+detecting subtle stimuli and evidence, determining another's intentions, aiding someone, and
+determining the most sound decision to make in a situation. This can also be used for casting some
+magical spells.
+
+Charisma
+Charisma is good for anything involving persuasion, captivation, and information gathering. This is
+useful for distracting others, enticing others, making others let their guard down, being socially
+fluid, spying, and making connections. This can also be used for casting some magical spells.
+
+Using the Form:
+Using your mouse, navigate to the box on the left. Click on the score you would like to assign.
+Navigate to the box on the right using your mouse once again. Click on the attribute you would like
+to assign the score to. Click the Allocate button to proceed with the assignment.
+If you change your mind, clicking the Undo button will undo your last allocation. This can be
+clicked multiple times.
+When you are satisfied with all of your allocated attributes, click the Finalize button to proceed
+to the next step."
 
             AllocationHelpForm.Show() 'Load the attribute help form
         End If
@@ -469,7 +577,14 @@ able to maintain a low profile in wooded areas, percipitation, and the like."
         If HelpFormNumberInteger = 0 Then
             HelpFormNumberInteger += 1
             Dim AttributesHelpForm As New HelpForm 'Create an instance of a new attribute help form
-            AttributesHelpForm.HelpTitleLabel.Text = "Character Attributes & What They Mean"
+            AttributesHelpForm.HelpTitleLabel.Text = "Character Attributes"
+            AttributesHelpForm.HelpTextBox.Text = "Viewing Your Attributes:
+This is where your allocated scores are displayed. Racial bonuses are also indicated in this section.
+For each attribute, the score is equal to the score assigned in the previous step plus any racial
+bonuses.
+
+Using the Form:
+This section is purely for display purposes, and does not require any interaction from the user."
 
             AttributesHelpForm.Show() 'Load the attribute help form
         End If
@@ -480,6 +595,82 @@ able to maintain a low profile in wooded areas, percipitation, and the like."
             HelpFormNumberInteger += 1
             Dim ProficienciesHelpForm As New HelpForm 'Create an instance of a new attribute help form
             ProficienciesHelpForm.HelpTitleLabel.Text = "How to Allocate Proficiencies"
+            ProficienciesHelpForm.HelpTextBox.Text = "Choosing Your Proficiencies:
+This is where you choose which skills your character is proficient in. The list of skills is
+pre-populated based on skills your class can be proficient in. When you are playing the game,
+skill proficiency allows your character to have a better chance of doing certain actions.
+
+What Skills Do:
+Acrobatics
+Acrobatics allows to you navigate narrow and unstable terrain. It also allows you to do things
+a gymnast would do.
+
+Animal Handling
+Animal handling allows you to exert more effective control over animals and assess their demeanor.
+
+Arcana
+Arcana allows you to know more about alternate realities, spells, and anything related to magic.
+
+Athletics
+Athletics allows you to navigate difficult terrain. It also helps you avoid hurting yourself when
+going through treacherous physical environments.
+
+Deception
+Deception allows you to effectively mislead, get one over on others, and be a better liar.
+
+History
+History allows you to know more about past occurences and important background information on
+places and people.
+
+Insight
+Insight allows you to better determine the demeanor of other living things.
+
+Intimidation
+Intimidation allows you to better accomplish your goals via threatening others and using aggression.
+
+Investigation
+Investigation allows you to examine physical evidence and make inferences based on it.
+
+Medicine
+Medicine allows you to determine what is afflicting others and provide medical care to
+others who are gravely injured.
+
+Nature
+Nature allows you to know more about the environment and the life within it.
+
+Perception
+Perception allows you to better sense external stimuli and pick up on more subtle stimuli.
+
+Performance
+Performance allows you to better captivate others through your actions.
+
+Persuasion
+Persuasion allows you to become better at changing the minds of others. In many ways, this is
+the opposite of deception, and it is usually used on those who possess integrity or are in a
+position of authority.
+
+Religion
+Religion allows you to know more about religious practices, icons, and texts.
+
+Sleight of Hand
+Sleight of hand is useful for stealing things, hiding things, and doing things requiring a light
+touch undetected.
+
+Stealth
+Stealth is useful for escaping dangerous situations, remaining covert, and inching close to
+someone without them noticing.
+
+Survival
+Survival allows you to navigate unknown terrain, avoid injurious terrain, and locate and
+subdue animals.
+
+Using the Form:
+Using your mouse, navigate to the box on the left. Click on the skill you would like to assign.
+Click the Allocate button to proceed with the assignment.
+If you change your mind, clicking the Undo button will undo your last allocation. This can be
+clicked multiple times.
+When you are satisfied with all of your allocated attributes, click the Finalize button to proceed
+to the next step."
 
             ProficienciesHelpForm.Show() 'Load the attribute help form
         End If
