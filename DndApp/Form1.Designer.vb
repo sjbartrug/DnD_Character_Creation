@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class characterSheetForm
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class CharacterSheetForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,211 +20,251 @@ Partial Class characterSheetForm
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.nameTextField = New System.Windows.Forms.TextBox()
-        Me.nameSubmitButton = New System.Windows.Forms.Button()
-        Me.humanRadioButton = New System.Windows.Forms.RadioButton()
-        Me.elfRadioButton = New System.Windows.Forms.RadioButton()
-        Me.tieflingRadioButton = New System.Windows.Forms.RadioButton()
-        Me.raceSubmitButton = New System.Windows.Forms.Button()
-        Me.fighterRadioButton = New System.Windows.Forms.RadioButton()
-        Me.barbarianRadioButton = New System.Windows.Forms.RadioButton()
-        Me.monkRadioButton = New System.Windows.Forms.RadioButton()
-        Me.classSubmitButton = New System.Windows.Forms.Button()
-        Me.highElfRadioButton = New System.Windows.Forms.RadioButton()
-        Me.woodElfRadioButton = New System.Windows.Forms.RadioButton()
-        Me.subraceSubmitButton = New System.Windows.Forms.Button()
-        Me.subrace = New System.Windows.Forms.Label()
-        Me.raceLabel = New System.Windows.Forms.Label()
-        Me.nameLabel = New System.Windows.Forms.Label()
-        Me.classLabel = New System.Windows.Forms.Label()
+        Me.NameTextField = New System.Windows.Forms.TextBox()
+        Me.NameSubmitButton = New System.Windows.Forms.Button()
+        Me.HumanRadioButton = New System.Windows.Forms.RadioButton()
+        Me.ElfRadioButton = New System.Windows.Forms.RadioButton()
+        Me.TieflingRadioButton = New System.Windows.Forms.RadioButton()
+        Me.RaceSubmitButton = New System.Windows.Forms.Button()
+        Me.FighterRadioButton = New System.Windows.Forms.RadioButton()
+        Me.BarbarianRadioButton = New System.Windows.Forms.RadioButton()
+        Me.MonkRadioButton = New System.Windows.Forms.RadioButton()
+        Me.ClassSubmitButton = New System.Windows.Forms.Button()
+        Me.HighElfRadioButton = New System.Windows.Forms.RadioButton()
+        Me.WoodElfRadioButton = New System.Windows.Forms.RadioButton()
+        Me.SubraceSubmitButton = New System.Windows.Forms.Button()
+        Me.SubraceLabel = New System.Windows.Forms.Label()
+        Me.RaceLabel = New System.Windows.Forms.Label()
+        Me.CharacterNameLabel = New System.Windows.Forms.Label()
+        Me.ClassLabel = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.dndLabel = New System.Windows.Forms.Label()
-        Me.statRollLabel = New System.Windows.Forms.Label()
-        Me.rollOneTextField = New System.Windows.Forms.TextBox()
-        Me.rollTwoTextField = New System.Windows.Forms.TextBox()
-        Me.rollThreeTextField = New System.Windows.Forms.TextBox()
+        Me.TitleLabel = New System.Windows.Forms.Label()
+        Me.StatRollLabel = New System.Windows.Forms.Label()
         Me.rollDiceButton = New System.Windows.Forms.Button()
         Me.rollValueSubmitButton = New System.Windows.Forms.Button()
-        Me.attributeAllocationLabel = New System.Windows.Forms.Label()
-        Me.attributeListBox = New System.Windows.Forms.ListBox()
-        Me.rollListBox = New System.Windows.Forms.ListBox()
-        Me.allocateButton = New System.Windows.Forms.Button()
-        Me.attributeSubmitButton = New System.Windows.Forms.Button()
+        Me.AttributeAllocationLabel = New System.Windows.Forms.Label()
+        Me.AttributeListBox = New System.Windows.Forms.ListBox()
+        Me.RollListBox = New System.Windows.Forms.ListBox()
+        Me.AllocateAttributeButton = New System.Windows.Forms.Button()
+        Me.FinalizeAttributeButton = New System.Windows.Forms.Button()
+        Me.UndoAttributeButton = New System.Windows.Forms.Button()
+        Me.CharacterAttributesLabel = New System.Windows.Forms.Label()
+        Me.labelStr = New System.Windows.Forms.Label()
+        Me.labelDex = New System.Windows.Forms.Label()
+        Me.labelCon = New System.Windows.Forms.Label()
+        Me.labelInt = New System.Windows.Forms.Label()
+        Me.labelWis = New System.Windows.Forms.Label()
+        Me.labelCha = New System.Windows.Forms.Label()
+        Me.labelStrValue = New System.Windows.Forms.Label()
+        Me.labelDexValue = New System.Windows.Forms.Label()
+        Me.labelConValue = New System.Windows.Forms.Label()
+        Me.labelIntValue = New System.Windows.Forms.Label()
+        Me.labelWisValue = New System.Windows.Forms.Label()
+        Me.labelChaValue = New System.Windows.Forms.Label()
+        Me.attributeHelpIconBox = New System.Windows.Forms.PictureBox()
+        Me.RaceGroupBox = New System.Windows.Forms.GroupBox()
+        Me.SubraceGroupBox = New System.Windows.Forms.GroupBox()
+        Me.ClassGroupBox = New System.Windows.Forms.GroupBox()
+        Me.ProficientSkillsLabel = New System.Windows.Forms.Label()
+        Me.SkillsListBox = New System.Windows.Forms.ListBox()
+        Me.AssignedSkillsListBox = New System.Windows.Forms.ListBox()
+        Me.UndoSkillsButton = New System.Windows.Forms.Button()
+        Me.FinalizeSkillsButton = New System.Windows.Forms.Button()
+        Me.AllocateSkillsButton = New System.Windows.Forms.Button()
+        Me.DnDLogoImage = New System.Windows.Forms.PictureBox()
+        Me.RollThreeTextField = New System.Windows.Forms.TextBox()
+        Me.RollTwoTextField = New System.Windows.Forms.TextBox()
+        Me.RollOneTextField = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.DiceRollGroupBox = New System.Windows.Forms.GroupBox()
+        Me.AttributesGroupBox = New System.Windows.Forms.GroupBox()
+        CType(Me.attributeHelpIconBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RaceGroupBox.SuspendLayout()
+        Me.SubraceGroupBox.SuspendLayout()
+        Me.ClassGroupBox.SuspendLayout()
+        CType(Me.DnDLogoImage, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.DiceRollGroupBox.SuspendLayout()
+        Me.AttributesGroupBox.SuspendLayout()
         Me.SuspendLayout()
         '
-        'nameTextField
+        'NameTextField
         '
-        Me.nameTextField.Location = New System.Drawing.Point(12, 113)
-        Me.nameTextField.Name = "nameTextField"
-        Me.nameTextField.PlaceholderText = "Insert Name Here"
-        Me.nameTextField.Size = New System.Drawing.Size(208, 23)
-        Me.nameTextField.TabIndex = 0
+        Me.NameTextField.Location = New System.Drawing.Point(12, 169)
+        Me.NameTextField.Name = "NameTextField"
+        Me.NameTextField.PlaceholderText = "Insert Your Characters Name Here"
+        Me.NameTextField.Size = New System.Drawing.Size(208, 23)
+        Me.NameTextField.TabIndex = 0
         '
-        'nameSubmitButton
+        'NameSubmitButton
         '
-        Me.nameSubmitButton.Location = New System.Drawing.Point(241, 114)
-        Me.nameSubmitButton.Name = "nameSubmitButton"
-        Me.nameSubmitButton.Size = New System.Drawing.Size(75, 22)
-        Me.nameSubmitButton.TabIndex = 1
-        Me.nameSubmitButton.Text = "Submit"
-        Me.nameSubmitButton.UseVisualStyleBackColor = True
+        Me.NameSubmitButton.Location = New System.Drawing.Point(226, 170)
+        Me.NameSubmitButton.Name = "NameSubmitButton"
+        Me.NameSubmitButton.Size = New System.Drawing.Size(75, 22)
+        Me.NameSubmitButton.TabIndex = 1
+        Me.NameSubmitButton.Text = "Submit"
+        Me.NameSubmitButton.UseVisualStyleBackColor = True
         '
-        'humanRadioButton
+        'HumanRadioButton
         '
-        Me.humanRadioButton.AutoSize = True
-        Me.humanRadioButton.Location = New System.Drawing.Point(12, 205)
-        Me.humanRadioButton.Name = "humanRadioButton"
-        Me.humanRadioButton.Size = New System.Drawing.Size(68, 19)
-        Me.humanRadioButton.TabIndex = 2
-        Me.humanRadioButton.TabStop = True
-        Me.humanRadioButton.Text = "Human "
-        Me.humanRadioButton.UseVisualStyleBackColor = True
+        Me.HumanRadioButton.AutoSize = True
+        Me.HumanRadioButton.Location = New System.Drawing.Point(5, 20)
+        Me.HumanRadioButton.Name = "HumanRadioButton"
+        Me.HumanRadioButton.Size = New System.Drawing.Size(68, 19)
+        Me.HumanRadioButton.TabIndex = 2
+        Me.HumanRadioButton.Text = "Human "
+        Me.HumanRadioButton.UseVisualStyleBackColor = True
         '
-        'elfRadioButton
+        'ElfRadioButton
         '
-        Me.elfRadioButton.AutoSize = True
-        Me.elfRadioButton.Location = New System.Drawing.Point(104, 205)
-        Me.elfRadioButton.Name = "elfRadioButton"
-        Me.elfRadioButton.Size = New System.Drawing.Size(38, 19)
-        Me.elfRadioButton.TabIndex = 3
-        Me.elfRadioButton.TabStop = True
-        Me.elfRadioButton.Text = "Elf"
-        Me.elfRadioButton.UseVisualStyleBackColor = True
+        Me.ElfRadioButton.AutoSize = True
+        Me.ElfRadioButton.Location = New System.Drawing.Point(82, 20)
+        Me.ElfRadioButton.Name = "ElfRadioButton"
+        Me.ElfRadioButton.Size = New System.Drawing.Size(38, 19)
+        Me.ElfRadioButton.TabIndex = 3
+        Me.ElfRadioButton.Text = "Elf"
+        Me.ElfRadioButton.UseVisualStyleBackColor = True
         '
-        'tieflingRadioButton
+        'TieflingRadioButton
         '
-        Me.tieflingRadioButton.AutoSize = True
-        Me.tieflingRadioButton.Location = New System.Drawing.Point(156, 203)
-        Me.tieflingRadioButton.Name = "tieflingRadioButton"
-        Me.tieflingRadioButton.Size = New System.Drawing.Size(64, 19)
-        Me.tieflingRadioButton.TabIndex = 4
-        Me.tieflingRadioButton.TabStop = True
-        Me.tieflingRadioButton.Text = "Tiefling"
-        Me.tieflingRadioButton.UseVisualStyleBackColor = True
+        Me.TieflingRadioButton.AutoSize = True
+        Me.TieflingRadioButton.Location = New System.Drawing.Point(129, 20)
+        Me.TieflingRadioButton.Name = "TieflingRadioButton"
+        Me.TieflingRadioButton.Size = New System.Drawing.Size(64, 19)
+        Me.TieflingRadioButton.TabIndex = 4
+        Me.TieflingRadioButton.Text = "Tiefling"
+        Me.TieflingRadioButton.UseVisualStyleBackColor = True
         '
-        'raceSubmitButton
+        'RaceSubmitButton
         '
-        Me.raceSubmitButton.Location = New System.Drawing.Point(241, 203)
-        Me.raceSubmitButton.Name = "raceSubmitButton"
-        Me.raceSubmitButton.Size = New System.Drawing.Size(75, 23)
-        Me.raceSubmitButton.TabIndex = 5
-        Me.raceSubmitButton.Text = "Submit"
-        Me.raceSubmitButton.UseVisualStyleBackColor = True
+        Me.RaceSubmitButton.Location = New System.Drawing.Point(237, 268)
+        Me.RaceSubmitButton.Name = "RaceSubmitButton"
+        Me.RaceSubmitButton.Size = New System.Drawing.Size(75, 23)
+        Me.RaceSubmitButton.TabIndex = 5
+        Me.RaceSubmitButton.Text = "Submit"
+        Me.RaceSubmitButton.UseVisualStyleBackColor = True
+        Me.RaceSubmitButton.Visible = False
         '
-        'fighterRadioButton
+        'FighterRadioButton
         '
-        Me.fighterRadioButton.AutoSize = True
-        Me.fighterRadioButton.Location = New System.Drawing.Point(148, 409)
-        Me.fighterRadioButton.Name = "fighterRadioButton"
-        Me.fighterRadioButton.Size = New System.Drawing.Size(62, 19)
-        Me.fighterRadioButton.TabIndex = 6
-        Me.fighterRadioButton.TabStop = True
-        Me.fighterRadioButton.Text = "Fighter"
-        Me.fighterRadioButton.UseVisualStyleBackColor = True
+        Me.FighterRadioButton.AutoSize = True
+        Me.FighterRadioButton.Location = New System.Drawing.Point(157, 20)
+        Me.FighterRadioButton.Name = "FighterRadioButton"
+        Me.FighterRadioButton.Size = New System.Drawing.Size(62, 19)
+        Me.FighterRadioButton.TabIndex = 6
+        Me.FighterRadioButton.TabStop = True
+        Me.FighterRadioButton.Text = "Fighter"
+        Me.FighterRadioButton.UseVisualStyleBackColor = True
         '
-        'barbarianRadioButton
+        'BarbarianRadioButton
         '
-        Me.barbarianRadioButton.AutoSize = True
-        Me.barbarianRadioButton.Location = New System.Drawing.Point(12, 409)
-        Me.barbarianRadioButton.Name = "barbarianRadioButton"
-        Me.barbarianRadioButton.Size = New System.Drawing.Size(75, 19)
-        Me.barbarianRadioButton.TabIndex = 7
-        Me.barbarianRadioButton.TabStop = True
-        Me.barbarianRadioButton.Text = "Barbarian"
-        Me.barbarianRadioButton.UseVisualStyleBackColor = True
+        Me.BarbarianRadioButton.AutoSize = True
+        Me.BarbarianRadioButton.Location = New System.Drawing.Point(5, 20)
+        Me.BarbarianRadioButton.Name = "BarbarianRadioButton"
+        Me.BarbarianRadioButton.Size = New System.Drawing.Size(75, 19)
+        Me.BarbarianRadioButton.TabIndex = 7
+        Me.BarbarianRadioButton.TabStop = True
+        Me.BarbarianRadioButton.Text = "Barbarian"
+        Me.BarbarianRadioButton.UseVisualStyleBackColor = True
         '
-        'monkRadioButton
+        'MonkRadioButton
         '
-        Me.monkRadioButton.AutoSize = True
-        Me.monkRadioButton.Location = New System.Drawing.Point(86, 409)
-        Me.monkRadioButton.Name = "monkRadioButton"
-        Me.monkRadioButton.Size = New System.Drawing.Size(56, 19)
-        Me.monkRadioButton.TabIndex = 8
-        Me.monkRadioButton.TabStop = True
-        Me.monkRadioButton.Text = "Monk"
-        Me.monkRadioButton.UseVisualStyleBackColor = True
+        Me.MonkRadioButton.AutoSize = True
+        Me.MonkRadioButton.Location = New System.Drawing.Point(93, 20)
+        Me.MonkRadioButton.Name = "MonkRadioButton"
+        Me.MonkRadioButton.Size = New System.Drawing.Size(56, 19)
+        Me.MonkRadioButton.TabIndex = 8
+        Me.MonkRadioButton.TabStop = True
+        Me.MonkRadioButton.Text = "Monk"
+        Me.MonkRadioButton.UseVisualStyleBackColor = True
         '
-        'classSubmitButton
+        'ClassSubmitButton
         '
-        Me.classSubmitButton.Location = New System.Drawing.Point(241, 405)
-        Me.classSubmitButton.Name = "classSubmitButton"
-        Me.classSubmitButton.Size = New System.Drawing.Size(75, 23)
-        Me.classSubmitButton.TabIndex = 9
-        Me.classSubmitButton.Text = "Submit"
-        Me.classSubmitButton.UseVisualStyleBackColor = True
+        Me.ClassSubmitButton.Location = New System.Drawing.Point(248, 492)
+        Me.ClassSubmitButton.Name = "ClassSubmitButton"
+        Me.ClassSubmitButton.Size = New System.Drawing.Size(75, 23)
+        Me.ClassSubmitButton.TabIndex = 9
+        Me.ClassSubmitButton.Text = "Submit"
+        Me.ClassSubmitButton.UseVisualStyleBackColor = True
+        Me.ClassSubmitButton.Visible = False
         '
-        'highElfRadioButton
+        'HighElfRadioButton
         '
-        Me.highElfRadioButton.AutoSize = True
-        Me.highElfRadioButton.Location = New System.Drawing.Point(35, 310)
-        Me.highElfRadioButton.Name = "highElfRadioButton"
-        Me.highElfRadioButton.Size = New System.Drawing.Size(67, 19)
-        Me.highElfRadioButton.TabIndex = 10
-        Me.highElfRadioButton.TabStop = True
-        Me.highElfRadioButton.Text = "High Elf"
-        Me.highElfRadioButton.UseVisualStyleBackColor = True
+        Me.HighElfRadioButton.AutoSize = True
+        Me.HighElfRadioButton.Location = New System.Drawing.Point(5, 20)
+        Me.HighElfRadioButton.Name = "HighElfRadioButton"
+        Me.HighElfRadioButton.Size = New System.Drawing.Size(67, 19)
+        Me.HighElfRadioButton.TabIndex = 10
+        Me.HighElfRadioButton.TabStop = True
+        Me.HighElfRadioButton.Text = "High Elf"
+        Me.HighElfRadioButton.UseVisualStyleBackColor = True
         '
-        'woodElfRadioButton
+        'WoodElfRadioButton
         '
-        Me.woodElfRadioButton.AutoSize = True
-        Me.woodElfRadioButton.Location = New System.Drawing.Point(123, 308)
-        Me.woodElfRadioButton.Name = "woodElfRadioButton"
-        Me.woodElfRadioButton.Size = New System.Drawing.Size(73, 19)
-        Me.woodElfRadioButton.TabIndex = 11
-        Me.woodElfRadioButton.TabStop = True
-        Me.woodElfRadioButton.Text = "Wood Elf"
-        Me.woodElfRadioButton.UseVisualStyleBackColor = True
+        Me.WoodElfRadioButton.AutoSize = True
+        Me.WoodElfRadioButton.Location = New System.Drawing.Point(83, 20)
+        Me.WoodElfRadioButton.Name = "WoodElfRadioButton"
+        Me.WoodElfRadioButton.Size = New System.Drawing.Size(73, 19)
+        Me.WoodElfRadioButton.TabIndex = 11
+        Me.WoodElfRadioButton.TabStop = True
+        Me.WoodElfRadioButton.Text = "Wood Elf"
+        Me.WoodElfRadioButton.UseVisualStyleBackColor = True
         '
-        'subraceSubmitButton
+        'SubraceSubmitButton
         '
-        Me.subraceSubmitButton.Location = New System.Drawing.Point(241, 306)
-        Me.subraceSubmitButton.Name = "subraceSubmitButton"
-        Me.subraceSubmitButton.Size = New System.Drawing.Size(75, 23)
-        Me.subraceSubmitButton.TabIndex = 12
-        Me.subraceSubmitButton.Text = "Submit"
-        Me.subraceSubmitButton.UseVisualStyleBackColor = True
+        Me.SubraceSubmitButton.Location = New System.Drawing.Point(253, 381)
+        Me.SubraceSubmitButton.Name = "SubraceSubmitButton"
+        Me.SubraceSubmitButton.Size = New System.Drawing.Size(75, 23)
+        Me.SubraceSubmitButton.TabIndex = 12
+        Me.SubraceSubmitButton.Text = "Submit"
+        Me.SubraceSubmitButton.UseVisualStyleBackColor = True
+        Me.SubraceSubmitButton.Visible = False
         '
-        'subrace
+        'SubraceLabel
         '
-        Me.subrace.AutoSize = True
-        Me.subrace.Font = New System.Drawing.Font("Bookman Old Style", 20.25!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
-        Me.subrace.Location = New System.Drawing.Point(55, 253)
-        Me.subrace.Name = "subrace"
-        Me.subrace.Size = New System.Drawing.Size(120, 32)
-        Me.subrace.TabIndex = 13
-        Me.subrace.Text = "Subrace"
+        Me.SubraceLabel.AutoSize = True
+        Me.SubraceLabel.Font = New System.Drawing.Font("Bookman Old Style", 20.25!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
+        Me.SubraceLabel.Location = New System.Drawing.Point(81, 325)
+        Me.SubraceLabel.Name = "SubraceLabel"
+        Me.SubraceLabel.Size = New System.Drawing.Size(120, 32)
+        Me.SubraceLabel.TabIndex = 13
+        Me.SubraceLabel.Text = "Subrace"
+        Me.SubraceLabel.Visible = False
         '
-        'raceLabel
+        'RaceLabel
         '
-        Me.raceLabel.AutoSize = True
-        Me.raceLabel.Font = New System.Drawing.Font("Bookman Old Style", 20.25!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
-        Me.raceLabel.Location = New System.Drawing.Point(77, 157)
-        Me.raceLabel.Name = "raceLabel"
-        Me.raceLabel.Size = New System.Drawing.Size(78, 32)
-        Me.raceLabel.TabIndex = 14
-        Me.raceLabel.Text = "Race"
+        Me.RaceLabel.AutoSize = True
+        Me.RaceLabel.Font = New System.Drawing.Font("Bookman Old Style", 20.25!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
+        Me.RaceLabel.Location = New System.Drawing.Point(5, 216)
+        Me.RaceLabel.Name = "RaceLabel"
+        Me.RaceLabel.Size = New System.Drawing.Size(78, 32)
+        Me.RaceLabel.TabIndex = 14
+        Me.RaceLabel.Text = "Race"
+        Me.RaceLabel.Visible = False
         '
-        'nameLabel
+        'CharacterNameLabel
         '
-        Me.nameLabel.AutoSize = True
-        Me.nameLabel.Font = New System.Drawing.Font("Bookman Old Style", 20.25!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
-        Me.nameLabel.Location = New System.Drawing.Point(77, 67)
-        Me.nameLabel.Name = "nameLabel"
-        Me.nameLabel.Size = New System.Drawing.Size(89, 32)
-        Me.nameLabel.TabIndex = 15
-        Me.nameLabel.Text = "Name"
+        Me.CharacterNameLabel.AutoSize = True
+        Me.CharacterNameLabel.Font = New System.Drawing.Font("Bookman Old Style", 20.25!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
+        Me.CharacterNameLabel.Location = New System.Drawing.Point(5, 132)
+        Me.CharacterNameLabel.Name = "CharacterNameLabel"
+        Me.CharacterNameLabel.Size = New System.Drawing.Size(226, 32)
+        Me.CharacterNameLabel.TabIndex = 15
+        Me.CharacterNameLabel.Text = "Character Name"
         '
-        'classLabel
+        'ClassLabel
         '
-        Me.classLabel.AutoSize = True
-        Me.classLabel.Font = New System.Drawing.Font("Bookman Old Style", 20.25!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
-        Me.classLabel.Location = New System.Drawing.Point(64, 361)
-        Me.classLabel.Name = "classLabel"
-        Me.classLabel.Size = New System.Drawing.Size(85, 32)
-        Me.classLabel.TabIndex = 16
-        Me.classLabel.Text = "Class"
+        Me.ClassLabel.AutoSize = True
+        Me.ClassLabel.Font = New System.Drawing.Font("Bookman Old Style", 20.25!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
+        Me.ClassLabel.Location = New System.Drawing.Point(12, 442)
+        Me.ClassLabel.Name = "ClassLabel"
+        Me.ClassLabel.Size = New System.Drawing.Size(85, 32)
+        Me.ClassLabel.TabIndex = 16
+        Me.ClassLabel.Text = "Class"
+        Me.ClassLabel.Visible = False
         '
         'Label1
         '
@@ -235,188 +275,570 @@ Partial Class characterSheetForm
         Me.Label1.Size = New System.Drawing.Size(0, 18)
         Me.Label1.TabIndex = 17
         '
-        'dndLabel
+        'TitleLabel
         '
-        Me.dndLabel.AutoSize = True
-        Me.dndLabel.Cursor = System.Windows.Forms.Cursors.Default
-        Me.dndLabel.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
-        Me.dndLabel.Location = New System.Drawing.Point(5, 9)
-        Me.dndLabel.Name = "dndLabel"
-        Me.dndLabel.Size = New System.Drawing.Size(207, 19)
-        Me.dndLabel.TabIndex = 18
-        Me.dndLabel.Text = "Dungeons And Dragons"
+        Me.TitleLabel.AutoSize = True
+        Me.TitleLabel.Cursor = System.Windows.Forms.Cursors.Default
+        Me.TitleLabel.Font = New System.Drawing.Font("Bookman Old Style", 27.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
+        Me.TitleLabel.ForeColor = System.Drawing.Color.Red
+        Me.TitleLabel.Location = New System.Drawing.Point(337, 28)
+        Me.TitleLabel.Name = "TitleLabel"
+        Me.TitleLabel.Size = New System.Drawing.Size(378, 43)
+        Me.TitleLabel.TabIndex = 18
+        Me.TitleLabel.Text = "Character Creator"
         '
-        'statRollLabel
+        'StatRollLabel
         '
-        Me.statRollLabel.AutoSize = True
-        Me.statRollLabel.Font = New System.Drawing.Font("Bookman Old Style", 20.25!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
-        Me.statRollLabel.Location = New System.Drawing.Point(456, 37)
-        Me.statRollLabel.Name = "statRollLabel"
-        Me.statRollLabel.Size = New System.Drawing.Size(122, 32)
-        Me.statRollLabel.TabIndex = 19
-        Me.statRollLabel.Text = "Stat Roll"
-        '
-        'rollOneTextField
-        '
-        Me.rollOneTextField.Location = New System.Drawing.Point(425, 114)
-        Me.rollOneTextField.Name = "rollOneTextField"
-        Me.rollOneTextField.PlaceholderText = "Roll 1"
-        Me.rollOneTextField.Size = New System.Drawing.Size(58, 23)
-        Me.rollOneTextField.TabIndex = 20
-        '
-        'rollTwoTextField
-        '
-        Me.rollTwoTextField.Location = New System.Drawing.Point(489, 115)
-        Me.rollTwoTextField.Name = "rollTwoTextField"
-        Me.rollTwoTextField.PlaceholderText = "Roll 2"
-        Me.rollTwoTextField.Size = New System.Drawing.Size(58, 23)
-        Me.rollTwoTextField.TabIndex = 21
-        '
-        'rollThreeTextField
-        '
-        Me.rollThreeTextField.Location = New System.Drawing.Point(553, 115)
-        Me.rollThreeTextField.Name = "rollThreeTextField"
-        Me.rollThreeTextField.PlaceholderText = "Roll 3"
-        Me.rollThreeTextField.Size = New System.Drawing.Size(58, 23)
-        Me.rollThreeTextField.TabIndex = 22
+        Me.StatRollLabel.AutoSize = True
+        Me.StatRollLabel.Font = New System.Drawing.Font("Bookman Old Style", 20.25!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
+        Me.StatRollLabel.Location = New System.Drawing.Point(349, 132)
+        Me.StatRollLabel.Name = "StatRollLabel"
+        Me.StatRollLabel.Size = New System.Drawing.Size(122, 32)
+        Me.StatRollLabel.TabIndex = 19
+        Me.StatRollLabel.Text = "Stat Roll"
+        Me.StatRollLabel.Visible = False
         '
         'rollDiceButton
         '
-        Me.rollDiceButton.Location = New System.Drawing.Point(489, 76)
+        Me.rollDiceButton.Location = New System.Drawing.Point(488, 129)
         Me.rollDiceButton.Name = "rollDiceButton"
-        Me.rollDiceButton.Size = New System.Drawing.Size(58, 23)
+        Me.rollDiceButton.Size = New System.Drawing.Size(97, 47)
         Me.rollDiceButton.TabIndex = 23
         Me.rollDiceButton.Text = "Roll"
         Me.rollDiceButton.UseVisualStyleBackColor = True
+        Me.rollDiceButton.Visible = False
         '
         'rollValueSubmitButton
         '
-        Me.rollValueSubmitButton.Location = New System.Drawing.Point(632, 115)
+        Me.rollValueSubmitButton.Location = New System.Drawing.Point(591, 129)
         Me.rollValueSubmitButton.Name = "rollValueSubmitButton"
-        Me.rollValueSubmitButton.Size = New System.Drawing.Size(75, 23)
+        Me.rollValueSubmitButton.Size = New System.Drawing.Size(97, 47)
         Me.rollValueSubmitButton.TabIndex = 24
         Me.rollValueSubmitButton.Text = "Submit"
         Me.rollValueSubmitButton.UseVisualStyleBackColor = True
+        Me.rollValueSubmitButton.Visible = False
         '
-        'attributeAllocationLabel
+        'AttributeAllocationLabel
         '
-        Me.attributeAllocationLabel.AutoSize = True
-        Me.attributeAllocationLabel.Font = New System.Drawing.Font("Bookman Old Style", 20.25!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
-        Me.attributeAllocationLabel.Location = New System.Drawing.Point(390, 169)
-        Me.attributeAllocationLabel.Name = "attributeAllocationLabel"
-        Me.attributeAllocationLabel.Size = New System.Drawing.Size(260, 32)
-        Me.attributeAllocationLabel.TabIndex = 25
-        Me.attributeAllocationLabel.Text = "Attribute Allocation"
+        Me.AttributeAllocationLabel.AutoSize = True
+        Me.AttributeAllocationLabel.Font = New System.Drawing.Font("Bookman Old Style", 20.25!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
+        Me.AttributeAllocationLabel.Location = New System.Drawing.Point(419, 325)
+        Me.AttributeAllocationLabel.Name = "AttributeAllocationLabel"
+        Me.AttributeAllocationLabel.Size = New System.Drawing.Size(260, 32)
+        Me.AttributeAllocationLabel.TabIndex = 25
+        Me.AttributeAllocationLabel.Text = "Attribute Allocation"
+        Me.AttributeAllocationLabel.Visible = False
         '
-        'attributeListBox
+        'AttributeListBox
         '
-        Me.attributeListBox.FormattingEnabled = True
-        Me.attributeListBox.ItemHeight = 15
-        Me.attributeListBox.Items.AddRange(New Object() {"Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"})
-        Me.attributeListBox.Location = New System.Drawing.Point(526, 221)
-        Me.attributeListBox.Name = "attributeListBox"
-        Me.attributeListBox.Size = New System.Drawing.Size(76, 94)
-        Me.attributeListBox.TabIndex = 26
+        Me.AttributeListBox.FormattingEnabled = True
+        Me.AttributeListBox.ItemHeight = 15
+        Me.AttributeListBox.Items.AddRange(New Object() {"Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"})
+        Me.AttributeListBox.Location = New System.Drawing.Point(559, 360)
+        Me.AttributeListBox.Name = "AttributeListBox"
+        Me.AttributeListBox.Size = New System.Drawing.Size(97, 154)
+        Me.AttributeListBox.TabIndex = 26
+        Me.AttributeListBox.Visible = False
         '
-        'rollListBox
+        'RollListBox
         '
-        Me.rollListBox.FormattingEnabled = True
-        Me.rollListBox.ItemHeight = 15
-        Me.rollListBox.Items.AddRange(New Object() {"Roll One", "Roll Two", "Roll Three"})
-        Me.rollListBox.Location = New System.Drawing.Point(425, 221)
-        Me.rollListBox.Name = "rollListBox"
-        Me.rollListBox.Size = New System.Drawing.Size(75, 94)
-        Me.rollListBox.TabIndex = 27
+        Me.RollListBox.FormattingEnabled = True
+        Me.RollListBox.ItemHeight = 15
+        Me.RollListBox.Location = New System.Drawing.Point(439, 360)
+        Me.RollListBox.Name = "RollListBox"
+        Me.RollListBox.Size = New System.Drawing.Size(98, 154)
+        Me.RollListBox.TabIndex = 27
+        Me.RollListBox.Visible = False
         '
-        'allocateButton
+        'AllocateAttributeButton
         '
-        Me.allocateButton.Location = New System.Drawing.Point(472, 341)
-        Me.allocateButton.Name = "allocateButton"
-        Me.allocateButton.Size = New System.Drawing.Size(75, 23)
-        Me.allocateButton.TabIndex = 28
-        Me.allocateButton.Text = "Allocate"
-        Me.allocateButton.UseVisualStyleBackColor = True
+        Me.AllocateAttributeButton.Location = New System.Drawing.Point(671, 384)
+        Me.AllocateAttributeButton.Name = "AllocateAttributeButton"
+        Me.AllocateAttributeButton.Size = New System.Drawing.Size(75, 23)
+        Me.AllocateAttributeButton.TabIndex = 28
+        Me.AllocateAttributeButton.Text = "Allocate"
+        Me.AllocateAttributeButton.UseVisualStyleBackColor = True
+        Me.AllocateAttributeButton.Visible = False
         '
-        'attributeSubmitButton
+        'FinalizeAttributeButton
         '
-        Me.attributeSubmitButton.Location = New System.Drawing.Point(472, 392)
-        Me.attributeSubmitButton.Name = "attributeSubmitButton"
-        Me.attributeSubmitButton.Size = New System.Drawing.Size(75, 23)
-        Me.attributeSubmitButton.TabIndex = 29
-        Me.attributeSubmitButton.Text = "Submit"
-        Me.attributeSubmitButton.UseVisualStyleBackColor = True
+        Me.FinalizeAttributeButton.Location = New System.Drawing.Point(671, 461)
+        Me.FinalizeAttributeButton.Name = "FinalizeAttributeButton"
+        Me.FinalizeAttributeButton.Size = New System.Drawing.Size(75, 23)
+        Me.FinalizeAttributeButton.TabIndex = 29
+        Me.FinalizeAttributeButton.Text = "Finalize"
+        Me.FinalizeAttributeButton.UseVisualStyleBackColor = True
+        Me.FinalizeAttributeButton.Visible = False
         '
-        'characterSheetForm
+        'UndoAttributeButton
+        '
+        Me.UndoAttributeButton.Location = New System.Drawing.Point(671, 423)
+        Me.UndoAttributeButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.UndoAttributeButton.Name = "UndoAttributeButton"
+        Me.UndoAttributeButton.Size = New System.Drawing.Size(75, 22)
+        Me.UndoAttributeButton.TabIndex = 30
+        Me.UndoAttributeButton.Text = "Undo"
+        Me.UndoAttributeButton.UseVisualStyleBackColor = True
+        Me.UndoAttributeButton.Visible = False
+        '
+        'CharacterAttributesLabel
+        '
+        Me.CharacterAttributesLabel.AutoSize = True
+        Me.CharacterAttributesLabel.Font = New System.Drawing.Font("Bookman Old Style", 20.25!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
+        Me.CharacterAttributesLabel.Location = New System.Drawing.Point(786, 36)
+        Me.CharacterAttributesLabel.Name = "CharacterAttributesLabel"
+        Me.CharacterAttributesLabel.Size = New System.Drawing.Size(277, 32)
+        Me.CharacterAttributesLabel.TabIndex = 31
+        Me.CharacterAttributesLabel.Text = "Character Attributes"
+        Me.CharacterAttributesLabel.Visible = False
+        '
+        'labelStr
+        '
+        Me.labelStr.AutoSize = True
+        Me.labelStr.Location = New System.Drawing.Point(20, 19)
+        Me.labelStr.Name = "labelStr"
+        Me.labelStr.Size = New System.Drawing.Size(52, 15)
+        Me.labelStr.TabIndex = 32
+        Me.labelStr.Text = "Strength"
+        '
+        'labelDex
+        '
+        Me.labelDex.AutoSize = True
+        Me.labelDex.Location = New System.Drawing.Point(147, 19)
+        Me.labelDex.Name = "labelDex"
+        Me.labelDex.Size = New System.Drawing.Size(54, 15)
+        Me.labelDex.TabIndex = 33
+        Me.labelDex.Text = "Dexterity"
+        '
+        'labelCon
+        '
+        Me.labelCon.AutoSize = True
+        Me.labelCon.Location = New System.Drawing.Point(273, 19)
+        Me.labelCon.Name = "labelCon"
+        Me.labelCon.Size = New System.Drawing.Size(73, 15)
+        Me.labelCon.TabIndex = 34
+        Me.labelCon.Text = "Constitution"
+        '
+        'labelInt
+        '
+        Me.labelInt.AutoSize = True
+        Me.labelInt.Location = New System.Drawing.Point(20, 85)
+        Me.labelInt.Name = "labelInt"
+        Me.labelInt.Size = New System.Drawing.Size(68, 15)
+        Me.labelInt.TabIndex = 35
+        Me.labelInt.Text = "Intelligence"
+        '
+        'labelWis
+        '
+        Me.labelWis.AutoSize = True
+        Me.labelWis.Location = New System.Drawing.Point(147, 85)
+        Me.labelWis.Name = "labelWis"
+        Me.labelWis.Size = New System.Drawing.Size(51, 15)
+        Me.labelWis.TabIndex = 36
+        Me.labelWis.Text = "Wisdom"
+        '
+        'labelCha
+        '
+        Me.labelCha.AutoSize = True
+        Me.labelCha.Location = New System.Drawing.Point(273, 85)
+        Me.labelCha.Name = "labelCha"
+        Me.labelCha.Size = New System.Drawing.Size(57, 15)
+        Me.labelCha.TabIndex = 37
+        Me.labelCha.Text = "Charisma"
+        '
+        'labelStrValue
+        '
+        Me.labelStrValue.AutoSize = True
+        Me.labelStrValue.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.labelStrValue.Location = New System.Drawing.Point(20, 49)
+        Me.labelStrValue.Name = "labelStrValue"
+        Me.labelStrValue.Size = New System.Drawing.Size(19, 21)
+        Me.labelStrValue.TabIndex = 38
+        Me.labelStrValue.Text = "0"
+        '
+        'labelDexValue
+        '
+        Me.labelDexValue.AutoSize = True
+        Me.labelDexValue.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.labelDexValue.Location = New System.Drawing.Point(147, 50)
+        Me.labelDexValue.Name = "labelDexValue"
+        Me.labelDexValue.Size = New System.Drawing.Size(19, 21)
+        Me.labelDexValue.TabIndex = 39
+        Me.labelDexValue.Text = "0"
+        '
+        'labelConValue
+        '
+        Me.labelConValue.AutoSize = True
+        Me.labelConValue.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.labelConValue.Location = New System.Drawing.Point(273, 52)
+        Me.labelConValue.Name = "labelConValue"
+        Me.labelConValue.Size = New System.Drawing.Size(19, 21)
+        Me.labelConValue.TabIndex = 40
+        Me.labelConValue.Text = "0"
+        '
+        'labelIntValue
+        '
+        Me.labelIntValue.AutoSize = True
+        Me.labelIntValue.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.labelIntValue.Location = New System.Drawing.Point(20, 119)
+        Me.labelIntValue.Name = "labelIntValue"
+        Me.labelIntValue.Size = New System.Drawing.Size(19, 21)
+        Me.labelIntValue.TabIndex = 41
+        Me.labelIntValue.Text = "0"
+        '
+        'labelWisValue
+        '
+        Me.labelWisValue.AutoSize = True
+        Me.labelWisValue.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.labelWisValue.Location = New System.Drawing.Point(147, 119)
+        Me.labelWisValue.Name = "labelWisValue"
+        Me.labelWisValue.Size = New System.Drawing.Size(19, 21)
+        Me.labelWisValue.TabIndex = 42
+        Me.labelWisValue.Text = "0"
+        '
+        'labelChaValue
+        '
+        Me.labelChaValue.AutoSize = True
+        Me.labelChaValue.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.labelChaValue.Location = New System.Drawing.Point(273, 119)
+        Me.labelChaValue.Name = "labelChaValue"
+        Me.labelChaValue.Size = New System.Drawing.Size(19, 21)
+        Me.labelChaValue.TabIndex = 43
+        Me.labelChaValue.Text = "0"
+        '
+        'attributeHelpIconBox
+        '
+        Me.attributeHelpIconBox.BackgroundImage = Global.DndApp.My.Resources.Resources.dndhelpicon
+        Me.attributeHelpIconBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.attributeHelpIconBox.Location = New System.Drawing.Point(1091, 27)
+        Me.attributeHelpIconBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.attributeHelpIconBox.Name = "attributeHelpIconBox"
+        Me.attributeHelpIconBox.Size = New System.Drawing.Size(44, 38)
+        Me.attributeHelpIconBox.TabIndex = 44
+        Me.attributeHelpIconBox.TabStop = False
+        '
+        'RaceGroupBox
+        '
+        Me.RaceGroupBox.Controls.Add(Me.HumanRadioButton)
+        Me.RaceGroupBox.Controls.Add(Me.ElfRadioButton)
+        Me.RaceGroupBox.Controls.Add(Me.TieflingRadioButton)
+        Me.RaceGroupBox.Location = New System.Drawing.Point(12, 250)
+        Me.RaceGroupBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.RaceGroupBox.Name = "RaceGroupBox"
+        Me.RaceGroupBox.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.RaceGroupBox.Size = New System.Drawing.Size(219, 53)
+        Me.RaceGroupBox.TabIndex = 45
+        Me.RaceGroupBox.TabStop = False
+        Me.RaceGroupBox.Visible = False
+        '
+        'SubraceGroupBox
+        '
+        Me.SubraceGroupBox.Controls.Add(Me.HighElfRadioButton)
+        Me.SubraceGroupBox.Controls.Add(Me.WoodElfRadioButton)
+        Me.SubraceGroupBox.Location = New System.Drawing.Point(81, 365)
+        Me.SubraceGroupBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.SubraceGroupBox.Name = "SubraceGroupBox"
+        Me.SubraceGroupBox.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.SubraceGroupBox.Size = New System.Drawing.Size(166, 46)
+        Me.SubraceGroupBox.TabIndex = 46
+        Me.SubraceGroupBox.TabStop = False
+        Me.SubraceGroupBox.Visible = False
+        '
+        'ClassGroupBox
+        '
+        Me.ClassGroupBox.Controls.Add(Me.BarbarianRadioButton)
+        Me.ClassGroupBox.Controls.Add(Me.MonkRadioButton)
+        Me.ClassGroupBox.Controls.Add(Me.FighterRadioButton)
+        Me.ClassGroupBox.Location = New System.Drawing.Point(12, 476)
+        Me.ClassGroupBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ClassGroupBox.Name = "ClassGroupBox"
+        Me.ClassGroupBox.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ClassGroupBox.Size = New System.Drawing.Size(230, 48)
+        Me.ClassGroupBox.TabIndex = 47
+        Me.ClassGroupBox.TabStop = False
+        Me.ClassGroupBox.Visible = False
+        '
+        'ProficientSkillsLabel
+        '
+        Me.ProficientSkillsLabel.AutoSize = True
+        Me.ProficientSkillsLabel.Font = New System.Drawing.Font("Bookman Old Style", 20.25!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
+        Me.ProficientSkillsLabel.Location = New System.Drawing.Point(837, 271)
+        Me.ProficientSkillsLabel.Name = "ProficientSkillsLabel"
+        Me.ProficientSkillsLabel.Size = New System.Drawing.Size(211, 32)
+        Me.ProficientSkillsLabel.TabIndex = 48
+        Me.ProficientSkillsLabel.Text = "Proficient Skills"
+        Me.ProficientSkillsLabel.Visible = False
+        '
+        'SkillsListBox
+        '
+        Me.SkillsListBox.FormattingEnabled = True
+        Me.SkillsListBox.ItemHeight = 15
+        Me.SkillsListBox.Location = New System.Drawing.Point(837, 345)
+        Me.SkillsListBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.SkillsListBox.Name = "SkillsListBox"
+        Me.SkillsListBox.Size = New System.Drawing.Size(97, 124)
+        Me.SkillsListBox.TabIndex = 50
+        Me.SkillsListBox.Visible = False
+        '
+        'AssignedSkillsListBox
+        '
+        Me.AssignedSkillsListBox.FormattingEnabled = True
+        Me.AssignedSkillsListBox.ItemHeight = 15
+        Me.AssignedSkillsListBox.Location = New System.Drawing.Point(939, 345)
+        Me.AssignedSkillsListBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.AssignedSkillsListBox.Name = "AssignedSkillsListBox"
+        Me.AssignedSkillsListBox.Size = New System.Drawing.Size(97, 124)
+        Me.AssignedSkillsListBox.TabIndex = 51
+        Me.AssignedSkillsListBox.Visible = False
+        '
+        'UndoSkillsButton
+        '
+        Me.UndoSkillsButton.Location = New System.Drawing.Point(1048, 398)
+        Me.UndoSkillsButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.UndoSkillsButton.Name = "UndoSkillsButton"
+        Me.UndoSkillsButton.Size = New System.Drawing.Size(75, 22)
+        Me.UndoSkillsButton.TabIndex = 54
+        Me.UndoSkillsButton.Text = "Undo"
+        Me.UndoSkillsButton.UseVisualStyleBackColor = True
+        Me.UndoSkillsButton.Visible = False
+        '
+        'FinalizeSkillsButton
+        '
+        Me.FinalizeSkillsButton.Location = New System.Drawing.Point(1048, 434)
+        Me.FinalizeSkillsButton.Name = "FinalizeSkillsButton"
+        Me.FinalizeSkillsButton.Size = New System.Drawing.Size(75, 23)
+        Me.FinalizeSkillsButton.TabIndex = 53
+        Me.FinalizeSkillsButton.Text = "Finalize"
+        Me.FinalizeSkillsButton.UseVisualStyleBackColor = True
+        Me.FinalizeSkillsButton.Visible = False
+        '
+        'AllocateSkillsButton
+        '
+        Me.AllocateSkillsButton.Location = New System.Drawing.Point(1048, 360)
+        Me.AllocateSkillsButton.Name = "AllocateSkillsButton"
+        Me.AllocateSkillsButton.Size = New System.Drawing.Size(75, 23)
+        Me.AllocateSkillsButton.TabIndex = 52
+        Me.AllocateSkillsButton.Text = "Allocate"
+        Me.AllocateSkillsButton.UseVisualStyleBackColor = True
+        Me.AllocateSkillsButton.Visible = False
+        '
+        'DnDLogoImage
+        '
+        Me.DnDLogoImage.Image = Global.DndApp.My.Resources.Resources.Dungeon_and_Dragons_Logo
+        Me.DnDLogoImage.Location = New System.Drawing.Point(5, -3)
+        Me.DnDLogoImage.Name = "DnDLogoImage"
+        Me.DnDLogoImage.Size = New System.Drawing.Size(326, 120)
+        Me.DnDLogoImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.DnDLogoImage.TabIndex = 55
+        Me.DnDLogoImage.TabStop = False
+        '
+        'RollThreeTextField
+        '
+        Me.RollThreeTextField.Enabled = False
+        Me.RollThreeTextField.Location = New System.Drawing.Point(302, 56)
+        Me.RollThreeTextField.Name = "RollThreeTextField"
+        Me.RollThreeTextField.PlaceholderText = "Roll 3"
+        Me.RollThreeTextField.Size = New System.Drawing.Size(58, 23)
+        Me.RollThreeTextField.TabIndex = 22
+        '
+        'RollTwoTextField
+        '
+        Me.RollTwoTextField.Enabled = False
+        Me.RollTwoTextField.Location = New System.Drawing.Point(172, 56)
+        Me.RollTwoTextField.Name = "RollTwoTextField"
+        Me.RollTwoTextField.PlaceholderText = "Roll 2"
+        Me.RollTwoTextField.Size = New System.Drawing.Size(58, 23)
+        Me.RollTwoTextField.TabIndex = 21
+        '
+        'RollOneTextField
+        '
+        Me.RollOneTextField.Enabled = False
+        Me.RollOneTextField.Location = New System.Drawing.Point(29, 56)
+        Me.RollOneTextField.Name = "RollOneTextField"
+        Me.RollOneTextField.PlaceholderText = "Roll 1"
+        Me.RollOneTextField.Size = New System.Drawing.Size(58, 23)
+        Me.RollOneTextField.TabIndex = 20
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(6, 38)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(103, 15)
+        Me.Label5.TabIndex = 57
+        Me.Label5.Text = "First Valued Rolled"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(144, 38)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(113, 15)
+        Me.Label6.TabIndex = 58
+        Me.Label6.Text = "Second Value Rolled"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(283, 38)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(101, 15)
+        Me.Label7.TabIndex = 59
+        Me.Label7.Text = "Third Value Rolled"
+        '
+        'DiceRollGroupBox
+        '
+        Me.DiceRollGroupBox.Controls.Add(Me.Label7)
+        Me.DiceRollGroupBox.Controls.Add(Me.Label6)
+        Me.DiceRollGroupBox.Controls.Add(Me.Label5)
+        Me.DiceRollGroupBox.Controls.Add(Me.RollOneTextField)
+        Me.DiceRollGroupBox.Controls.Add(Me.RollTwoTextField)
+        Me.DiceRollGroupBox.Controls.Add(Me.RollThreeTextField)
+        Me.DiceRollGroupBox.Location = New System.Drawing.Point(355, 184)
+        Me.DiceRollGroupBox.Name = "DiceRollGroupBox"
+        Me.DiceRollGroupBox.Size = New System.Drawing.Size(391, 119)
+        Me.DiceRollGroupBox.TabIndex = 56
+        Me.DiceRollGroupBox.TabStop = False
+        Me.DiceRollGroupBox.Visible = False
+        '
+        'AttributesGroupBox
+        '
+        Me.AttributesGroupBox.Controls.Add(Me.labelStr)
+        Me.AttributesGroupBox.Controls.Add(Me.labelDex)
+        Me.AttributesGroupBox.Controls.Add(Me.labelCon)
+        Me.AttributesGroupBox.Controls.Add(Me.labelInt)
+        Me.AttributesGroupBox.Controls.Add(Me.labelWis)
+        Me.AttributesGroupBox.Controls.Add(Me.labelCha)
+        Me.AttributesGroupBox.Controls.Add(Me.labelStrValue)
+        Me.AttributesGroupBox.Controls.Add(Me.labelDexValue)
+        Me.AttributesGroupBox.Controls.Add(Me.labelConValue)
+        Me.AttributesGroupBox.Controls.Add(Me.labelIntValue)
+        Me.AttributesGroupBox.Controls.Add(Me.labelWisValue)
+        Me.AttributesGroupBox.Controls.Add(Me.labelChaValue)
+        Me.AttributesGroupBox.Location = New System.Drawing.Point(773, 72)
+        Me.AttributesGroupBox.Name = "AttributesGroupBox"
+        Me.AttributesGroupBox.Size = New System.Drawing.Size(362, 165)
+        Me.AttributesGroupBox.TabIndex = 57
+        Me.AttributesGroupBox.TabStop = False
+        Me.AttributesGroupBox.Visible = False
+        '
+        'CharacterSheetForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1120, 478)
-        Me.Controls.Add(Me.attributeSubmitButton)
-        Me.Controls.Add(Me.allocateButton)
-        Me.Controls.Add(Me.rollListBox)
-        Me.Controls.Add(Me.attributeListBox)
-        Me.Controls.Add(Me.attributeAllocationLabel)
+        Me.ClientSize = New System.Drawing.Size(1175, 541)
+        Me.Controls.Add(Me.AttributesGroupBox)
+        Me.Controls.Add(Me.DiceRollGroupBox)
+        Me.Controls.Add(Me.DnDLogoImage)
+        Me.Controls.Add(Me.UndoSkillsButton)
+        Me.Controls.Add(Me.FinalizeSkillsButton)
+        Me.Controls.Add(Me.AllocateSkillsButton)
+        Me.Controls.Add(Me.AssignedSkillsListBox)
+        Me.Controls.Add(Me.SkillsListBox)
+        Me.Controls.Add(Me.ProficientSkillsLabel)
+        Me.Controls.Add(Me.ClassGroupBox)
+        Me.Controls.Add(Me.SubraceGroupBox)
+        Me.Controls.Add(Me.RaceGroupBox)
+        Me.Controls.Add(Me.attributeHelpIconBox)
+        Me.Controls.Add(Me.CharacterAttributesLabel)
+        Me.Controls.Add(Me.UndoAttributeButton)
+        Me.Controls.Add(Me.FinalizeAttributeButton)
+        Me.Controls.Add(Me.AllocateAttributeButton)
+        Me.Controls.Add(Me.RollListBox)
+        Me.Controls.Add(Me.AttributeListBox)
+        Me.Controls.Add(Me.AttributeAllocationLabel)
         Me.Controls.Add(Me.rollValueSubmitButton)
         Me.Controls.Add(Me.rollDiceButton)
-        Me.Controls.Add(Me.rollThreeTextField)
-        Me.Controls.Add(Me.rollTwoTextField)
-        Me.Controls.Add(Me.rollOneTextField)
-        Me.Controls.Add(Me.statRollLabel)
-        Me.Controls.Add(Me.dndLabel)
+        Me.Controls.Add(Me.StatRollLabel)
+        Me.Controls.Add(Me.TitleLabel)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.classLabel)
-        Me.Controls.Add(Me.nameLabel)
-        Me.Controls.Add(Me.raceLabel)
-        Me.Controls.Add(Me.subrace)
-        Me.Controls.Add(Me.subraceSubmitButton)
-        Me.Controls.Add(Me.woodElfRadioButton)
-        Me.Controls.Add(Me.highElfRadioButton)
-        Me.Controls.Add(Me.classSubmitButton)
-        Me.Controls.Add(Me.monkRadioButton)
-        Me.Controls.Add(Me.barbarianRadioButton)
-        Me.Controls.Add(Me.fighterRadioButton)
-        Me.Controls.Add(Me.raceSubmitButton)
-        Me.Controls.Add(Me.tieflingRadioButton)
-        Me.Controls.Add(Me.elfRadioButton)
-        Me.Controls.Add(Me.humanRadioButton)
-        Me.Controls.Add(Me.nameSubmitButton)
-        Me.Controls.Add(Me.nameTextField)
-        Me.Name = "characterSheetForm"
-        Me.Text = "D & D Character Sheet"
+        Me.Controls.Add(Me.ClassLabel)
+        Me.Controls.Add(Me.CharacterNameLabel)
+        Me.Controls.Add(Me.RaceLabel)
+        Me.Controls.Add(Me.SubraceLabel)
+        Me.Controls.Add(Me.SubraceSubmitButton)
+        Me.Controls.Add(Me.ClassSubmitButton)
+        Me.Controls.Add(Me.RaceSubmitButton)
+        Me.Controls.Add(Me.NameSubmitButton)
+        Me.Controls.Add(Me.NameTextField)
+        Me.Name = "CharacterSheetForm"
+        Me.Text = "D&D Character Creation"
+        CType(Me.attributeHelpIconBox, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RaceGroupBox.ResumeLayout(False)
+        Me.RaceGroupBox.PerformLayout()
+        Me.SubraceGroupBox.ResumeLayout(False)
+        Me.SubraceGroupBox.PerformLayout()
+        Me.ClassGroupBox.ResumeLayout(False)
+        Me.ClassGroupBox.PerformLayout()
+        CType(Me.DnDLogoImage, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.DiceRollGroupBox.ResumeLayout(False)
+        Me.DiceRollGroupBox.PerformLayout()
+        Me.AttributesGroupBox.ResumeLayout(False)
+        Me.AttributesGroupBox.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents nameTextField As TextBox
-    Friend WithEvents nameSubmitButton As Button
-    Friend WithEvents humanRadioButton As RadioButton
-    Friend WithEvents elfRadioButton As RadioButton
-    Friend WithEvents tieflingRadioButton As RadioButton
-    Friend WithEvents raceSubmitButton As Button
-    Friend WithEvents fighterRadioButton As RadioButton
+    Friend WithEvents NameTextField As TextBox
+    Friend WithEvents NameSubmitButton As Button
+    Friend WithEvents HumanRadioButton As RadioButton
+    Friend WithEvents ElfRadioButton As RadioButton
+    Friend WithEvents TieflingRadioButton As RadioButton
+    Friend WithEvents RaceSubmitButton As Button
+    Friend WithEvents FighterRadioButton As RadioButton
     Friend WithEvents RadioButton2 As RadioButton
-    Friend WithEvents barbarianRadioButton As RadioButton
-    Friend WithEvents monkRadioButton As RadioButton
-    Friend WithEvents classSubmitButton As Button
-    Friend WithEvents highElfRadioButton As RadioButton
-    Friend WithEvents woodElfRadioButton As RadioButton
-    Friend WithEvents subraceSubmitButton As Button
-    Friend WithEvents subrace As Label
-    Friend WithEvents raceLabel As Label
-    Friend WithEvents nameLabel As Label
-    Friend WithEvents classLabel As Label
+    Friend WithEvents BarbarianRadioButton As RadioButton
+    Friend WithEvents MonkRadioButton As RadioButton
+    Friend WithEvents ClassSubmitButton As Button
+    Friend WithEvents HighElfRadioButton As RadioButton
+    Friend WithEvents WoodElfRadioButton As RadioButton
+    Friend WithEvents SubraceSubmitButton As Button
+    Friend WithEvents SubraceLabel As Label
+    Friend WithEvents RaceLabel As Label
+    Friend WithEvents CharacterNameLabel As Label
+    Friend WithEvents ClassLabel As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents dndLabel As Label
-    Friend WithEvents statRollLabel As Label
-    Friend WithEvents rollOneTextField As TextBox
-    Friend WithEvents rollTwoTextField As TextBox
-    Friend WithEvents rollThreeTextField As TextBox
+    Friend WithEvents TitleLabel As Label
+    Friend WithEvents StatRollLabel As Label
     Friend WithEvents rollDiceButton As Button
     Friend WithEvents rollValueSubmitButton As Button
-    Friend WithEvents attributeAllocationLabel As Label
-    Friend WithEvents attributeListBox As ListBox
-    Friend WithEvents rollListBox As ListBox
-    Friend WithEvents allocateButton As Button
-    Friend WithEvents attributeSubmitButton As Button
+    Friend WithEvents AttributeAllocationLabel As Label
+    Friend WithEvents AttributeListBox As ListBox
+    Friend WithEvents RollListBox As ListBox
+    Friend WithEvents AllocateAttributeButton As Button
+    Friend WithEvents FinalizeAttributeButton As Button
+    Friend WithEvents UndoAttributeButton As Button
+    Friend WithEvents CharacterAttributesLabel As Label
+    Friend WithEvents labelStr As Label
+    Friend WithEvents labelDex As Label
+    Friend WithEvents labelCon As Label
+    Friend WithEvents labelInt As Label
+    Friend WithEvents labelWis As Label
+    Friend WithEvents labelCha As Label
+    Friend WithEvents labelStrValue As Label
+    Friend WithEvents labelDexValue As Label
+    Friend WithEvents labelConValue As Label
+    Friend WithEvents labelIntValue As Label
+    Friend WithEvents labelWisValue As Label
+    Friend WithEvents labelChaValue As Label
+    Friend WithEvents attributeHelpIconBox As PictureBox
+    Friend WithEvents RaceGroupBox As GroupBox
+    Friend WithEvents SubraceGroupBox As GroupBox
+    Friend WithEvents ClassGroupBox As GroupBox
+    Friend WithEvents ProficientSkillsLabel As Label
+    Friend WithEvents SkillsListBox As ListBox
+    Friend WithEvents AssignedSkillsListBox As ListBox
+    Friend WithEvents UndoSkillsButton As Button
+    Friend WithEvents FinalizeSkillsButton As Button
+    Friend WithEvents AllocateSkillsButton As Button
+    Friend WithEvents DnDLogoImage As PictureBox
+    Friend WithEvents RollThreeTextField As TextBox
+    Friend WithEvents RollTwoTextField As TextBox
+    Friend WithEvents RollOneTextField As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents DiceRollGroupBox As GroupBox
+    Friend WithEvents AttributesGroupBox As GroupBox
 End Class
