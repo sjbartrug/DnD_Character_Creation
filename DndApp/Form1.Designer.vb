@@ -89,6 +89,27 @@ Partial Class CharacterSheetForm
         Me.StatHelpBox = New System.Windows.Forms.PictureBox()
         Me.AllocationHelpBox = New System.Windows.Forms.PictureBox()
         Me.ProficienciesHelpBox = New System.Windows.Forms.PictureBox()
+        Me.AcidSplashRadioButton = New System.Windows.Forms.RadioButton()
+        Me.BladeWardRadioButton = New System.Windows.Forms.RadioButton()
+        Me.ChillTouchRadioButton = New System.Windows.Forms.RadioButton()
+        Me.DancingLightsRadioButton = New System.Windows.Forms.RadioButton()
+        Me.FireBoltRadioButton = New System.Windows.Forms.RadioButton()
+        Me.FriendsRadioButton = New System.Windows.Forms.RadioButton()
+        Me.LightRadioButton = New System.Windows.Forms.RadioButton()
+        Me.MageHandRadioButton = New System.Windows.Forms.RadioButton()
+        Me.MendingRadioButton = New System.Windows.Forms.RadioButton()
+        Me.MessageRadioButton = New System.Windows.Forms.RadioButton()
+        Me.MinorIllusionRadioButton = New System.Windows.Forms.RadioButton()
+        Me.PoisonSprayRadioButton = New System.Windows.Forms.RadioButton()
+        Me.PrestidigitationRadioButton = New System.Windows.Forms.RadioButton()
+        Me.RayofFrostRadioButton = New System.Windows.Forms.RadioButton()
+        Me.ShockingGraspRadioButton = New System.Windows.Forms.RadioButton()
+        Me.TrueStrikeRadioButton = New System.Windows.Forms.RadioButton()
+        Me.HighElfCantripSelectionLabel = New System.Windows.Forms.Label()
+        Me.CantripGroupBox = New System.Windows.Forms.GroupBox()
+        Me.CantripHelpButton = New System.Windows.Forms.PictureBox()
+        Me.FinalSubmitButton = New System.Windows.Forms.Button()
+        Me.CantripButton = New System.Windows.Forms.Button()
         CType(Me.AttributeHelpButton, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RaceGroupBox.SuspendLayout()
         Me.SubraceGroupBox.SuspendLayout()
@@ -103,6 +124,8 @@ Partial Class CharacterSheetForm
         CType(Me.StatHelpBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AllocationHelpBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ProficienciesHelpBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CantripGroupBox.SuspendLayout()
+        CType(Me.CantripHelpButton, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'NameTextField
@@ -115,12 +138,14 @@ Partial Class CharacterSheetForm
         '
         'NameSubmitButton
         '
+        Me.NameSubmitButton.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.NameSubmitButton.ForeColor = System.Drawing.Color.DarkRed
         Me.NameSubmitButton.Location = New System.Drawing.Point(226, 170)
         Me.NameSubmitButton.Name = "NameSubmitButton"
         Me.NameSubmitButton.Size = New System.Drawing.Size(75, 22)
         Me.NameSubmitButton.TabIndex = 1
         Me.NameSubmitButton.Text = "Submit"
-        Me.NameSubmitButton.UseVisualStyleBackColor = True
+        Me.NameSubmitButton.UseVisualStyleBackColor = False
         '
         'HumanRadioButton
         '
@@ -154,12 +179,14 @@ Partial Class CharacterSheetForm
         '
         'RaceSubmitButton
         '
+        Me.RaceSubmitButton.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.RaceSubmitButton.ForeColor = System.Drawing.Color.DarkRed
         Me.RaceSubmitButton.Location = New System.Drawing.Point(237, 268)
         Me.RaceSubmitButton.Name = "RaceSubmitButton"
         Me.RaceSubmitButton.Size = New System.Drawing.Size(75, 23)
         Me.RaceSubmitButton.TabIndex = 5
         Me.RaceSubmitButton.Text = "Submit"
-        Me.RaceSubmitButton.UseVisualStyleBackColor = True
+        Me.RaceSubmitButton.UseVisualStyleBackColor = False
         Me.RaceSubmitButton.Visible = False
         '
         'FighterRadioButton
@@ -197,12 +224,14 @@ Partial Class CharacterSheetForm
         '
         'ClassSubmitButton
         '
+        Me.ClassSubmitButton.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.ClassSubmitButton.ForeColor = System.Drawing.Color.DarkRed
         Me.ClassSubmitButton.Location = New System.Drawing.Point(248, 492)
         Me.ClassSubmitButton.Name = "ClassSubmitButton"
         Me.ClassSubmitButton.Size = New System.Drawing.Size(75, 23)
         Me.ClassSubmitButton.TabIndex = 9
         Me.ClassSubmitButton.Text = "Submit"
-        Me.ClassSubmitButton.UseVisualStyleBackColor = True
+        Me.ClassSubmitButton.UseVisualStyleBackColor = False
         Me.ClassSubmitButton.Visible = False
         '
         'HighElfRadioButton
@@ -229,12 +258,14 @@ Partial Class CharacterSheetForm
         '
         'SubraceSubmitButton
         '
+        Me.SubraceSubmitButton.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.SubraceSubmitButton.ForeColor = System.Drawing.Color.DarkRed
         Me.SubraceSubmitButton.Location = New System.Drawing.Point(253, 381)
         Me.SubraceSubmitButton.Name = "SubraceSubmitButton"
         Me.SubraceSubmitButton.Size = New System.Drawing.Size(75, 23)
         Me.SubraceSubmitButton.TabIndex = 12
         Me.SubraceSubmitButton.Text = "Submit"
-        Me.SubraceSubmitButton.UseVisualStyleBackColor = True
+        Me.SubraceSubmitButton.UseVisualStyleBackColor = False
         Me.SubraceSubmitButton.Visible = False
         '
         'SubraceLabel
@@ -314,22 +345,26 @@ Partial Class CharacterSheetForm
         '
         'rollDiceButton
         '
+        Me.rollDiceButton.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.rollDiceButton.ForeColor = System.Drawing.Color.DarkRed
         Me.rollDiceButton.Location = New System.Drawing.Point(488, 129)
         Me.rollDiceButton.Name = "rollDiceButton"
         Me.rollDiceButton.Size = New System.Drawing.Size(97, 47)
         Me.rollDiceButton.TabIndex = 23
         Me.rollDiceButton.Text = "Roll"
-        Me.rollDiceButton.UseVisualStyleBackColor = True
+        Me.rollDiceButton.UseVisualStyleBackColor = False
         Me.rollDiceButton.Visible = False
         '
         'rollValueSubmitButton
         '
+        Me.rollValueSubmitButton.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.rollValueSubmitButton.ForeColor = System.Drawing.Color.DarkRed
         Me.rollValueSubmitButton.Location = New System.Drawing.Point(591, 129)
         Me.rollValueSubmitButton.Name = "rollValueSubmitButton"
         Me.rollValueSubmitButton.Size = New System.Drawing.Size(97, 47)
         Me.rollValueSubmitButton.TabIndex = 24
         Me.rollValueSubmitButton.Text = "Submit"
-        Me.rollValueSubmitButton.UseVisualStyleBackColor = True
+        Me.rollValueSubmitButton.UseVisualStyleBackColor = False
         Me.rollValueSubmitButton.Visible = False
         '
         'AttributeAllocationLabel
@@ -366,33 +401,39 @@ Partial Class CharacterSheetForm
         '
         'AllocateAttributeButton
         '
+        Me.AllocateAttributeButton.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.AllocateAttributeButton.ForeColor = System.Drawing.Color.DarkRed
         Me.AllocateAttributeButton.Location = New System.Drawing.Point(671, 384)
         Me.AllocateAttributeButton.Name = "AllocateAttributeButton"
         Me.AllocateAttributeButton.Size = New System.Drawing.Size(75, 23)
         Me.AllocateAttributeButton.TabIndex = 28
         Me.AllocateAttributeButton.Text = "Allocate"
-        Me.AllocateAttributeButton.UseVisualStyleBackColor = True
+        Me.AllocateAttributeButton.UseVisualStyleBackColor = False
         Me.AllocateAttributeButton.Visible = False
         '
         'FinalizeAttributeButton
         '
+        Me.FinalizeAttributeButton.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.FinalizeAttributeButton.ForeColor = System.Drawing.Color.DarkRed
         Me.FinalizeAttributeButton.Location = New System.Drawing.Point(671, 461)
         Me.FinalizeAttributeButton.Name = "FinalizeAttributeButton"
         Me.FinalizeAttributeButton.Size = New System.Drawing.Size(75, 23)
         Me.FinalizeAttributeButton.TabIndex = 29
         Me.FinalizeAttributeButton.Text = "Finalize"
-        Me.FinalizeAttributeButton.UseVisualStyleBackColor = True
+        Me.FinalizeAttributeButton.UseVisualStyleBackColor = False
         Me.FinalizeAttributeButton.Visible = False
         '
         'UndoAttributeButton
         '
+        Me.UndoAttributeButton.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.UndoAttributeButton.ForeColor = System.Drawing.Color.DarkRed
         Me.UndoAttributeButton.Location = New System.Drawing.Point(671, 423)
         Me.UndoAttributeButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.UndoAttributeButton.Name = "UndoAttributeButton"
         Me.UndoAttributeButton.Size = New System.Drawing.Size(75, 22)
         Me.UndoAttributeButton.TabIndex = 30
         Me.UndoAttributeButton.Text = "Undo"
-        Me.UndoAttributeButton.UseVisualStyleBackColor = True
+        Me.UndoAttributeButton.UseVisualStyleBackColor = False
         Me.UndoAttributeButton.Visible = False
         '
         'CharacterAttributesLabel
@@ -608,35 +649,41 @@ Partial Class CharacterSheetForm
         '
         'UndoSkillsButton
         '
+        Me.UndoSkillsButton.BackColor = System.Drawing.SystemColors.ControlDark
         Me.UndoSkillsButton.Enabled = False
+        Me.UndoSkillsButton.ForeColor = System.Drawing.Color.DarkRed
         Me.UndoSkillsButton.Location = New System.Drawing.Point(1048, 398)
         Me.UndoSkillsButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.UndoSkillsButton.Name = "UndoSkillsButton"
         Me.UndoSkillsButton.Size = New System.Drawing.Size(75, 22)
         Me.UndoSkillsButton.TabIndex = 54
         Me.UndoSkillsButton.Text = "Undo"
-        Me.UndoSkillsButton.UseVisualStyleBackColor = True
+        Me.UndoSkillsButton.UseVisualStyleBackColor = False
         Me.UndoSkillsButton.Visible = False
         '
         'FinalizeSkillsButton
         '
+        Me.FinalizeSkillsButton.BackColor = System.Drawing.SystemColors.ControlDark
         Me.FinalizeSkillsButton.Enabled = False
+        Me.FinalizeSkillsButton.ForeColor = System.Drawing.Color.DarkRed
         Me.FinalizeSkillsButton.Location = New System.Drawing.Point(1048, 434)
         Me.FinalizeSkillsButton.Name = "FinalizeSkillsButton"
         Me.FinalizeSkillsButton.Size = New System.Drawing.Size(75, 23)
         Me.FinalizeSkillsButton.TabIndex = 53
         Me.FinalizeSkillsButton.Text = "Finalize"
-        Me.FinalizeSkillsButton.UseVisualStyleBackColor = True
+        Me.FinalizeSkillsButton.UseVisualStyleBackColor = False
         Me.FinalizeSkillsButton.Visible = False
         '
         'AllocateSkillsButton
         '
+        Me.AllocateSkillsButton.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.AllocateSkillsButton.ForeColor = System.Drawing.Color.DarkRed
         Me.AllocateSkillsButton.Location = New System.Drawing.Point(1048, 360)
         Me.AllocateSkillsButton.Name = "AllocateSkillsButton"
         Me.AllocateSkillsButton.Size = New System.Drawing.Size(75, 23)
         Me.AllocateSkillsButton.TabIndex = 52
         Me.AllocateSkillsButton.Text = "Allocate"
-        Me.AllocateSkillsButton.UseVisualStyleBackColor = True
+        Me.AllocateSkillsButton.UseVisualStyleBackColor = False
         Me.AllocateSkillsButton.Visible = False
         '
         'DnDLogoImage
@@ -822,11 +869,251 @@ Partial Class CharacterSheetForm
         Me.ProficienciesHelpBox.TabStop = False
         Me.ProficienciesHelpBox.Visible = False
         '
+        'AcidSplashRadioButton
+        '
+        Me.AcidSplashRadioButton.AutoSize = True
+        Me.AcidSplashRadioButton.Checked = True
+        Me.AcidSplashRadioButton.Location = New System.Drawing.Point(6, 26)
+        Me.AcidSplashRadioButton.Name = "AcidSplashRadioButton"
+        Me.AcidSplashRadioButton.Size = New System.Drawing.Size(86, 19)
+        Me.AcidSplashRadioButton.TabIndex = 65
+        Me.AcidSplashRadioButton.TabStop = True
+        Me.AcidSplashRadioButton.Text = "Acid Splash"
+        Me.AcidSplashRadioButton.UseVisualStyleBackColor = True
+        '
+        'BladeWardRadioButton
+        '
+        Me.BladeWardRadioButton.AutoSize = True
+        Me.BladeWardRadioButton.Location = New System.Drawing.Point(6, 64)
+        Me.BladeWardRadioButton.Name = "BladeWardRadioButton"
+        Me.BladeWardRadioButton.Size = New System.Drawing.Size(85, 19)
+        Me.BladeWardRadioButton.TabIndex = 66
+        Me.BladeWardRadioButton.Text = "Blade Ward"
+        Me.BladeWardRadioButton.UseVisualStyleBackColor = True
+        '
+        'ChillTouchRadioButton
+        '
+        Me.ChillTouchRadioButton.AutoSize = True
+        Me.ChillTouchRadioButton.Location = New System.Drawing.Point(6, 102)
+        Me.ChillTouchRadioButton.Name = "ChillTouchRadioButton"
+        Me.ChillTouchRadioButton.Size = New System.Drawing.Size(84, 19)
+        Me.ChillTouchRadioButton.TabIndex = 67
+        Me.ChillTouchRadioButton.Text = "Chill Touch"
+        Me.ChillTouchRadioButton.UseVisualStyleBackColor = True
+        '
+        'DancingLightsRadioButton
+        '
+        Me.DancingLightsRadioButton.AutoSize = True
+        Me.DancingLightsRadioButton.Location = New System.Drawing.Point(6, 140)
+        Me.DancingLightsRadioButton.Name = "DancingLightsRadioButton"
+        Me.DancingLightsRadioButton.Size = New System.Drawing.Size(104, 19)
+        Me.DancingLightsRadioButton.TabIndex = 68
+        Me.DancingLightsRadioButton.Text = "Dancing Lights"
+        Me.DancingLightsRadioButton.UseVisualStyleBackColor = True
+        '
+        'FireBoltRadioButton
+        '
+        Me.FireBoltRadioButton.AutoSize = True
+        Me.FireBoltRadioButton.Location = New System.Drawing.Point(6, 178)
+        Me.FireBoltRadioButton.Name = "FireBoltRadioButton"
+        Me.FireBoltRadioButton.Size = New System.Drawing.Size(68, 19)
+        Me.FireBoltRadioButton.TabIndex = 69
+        Me.FireBoltRadioButton.Text = "Fire Bolt"
+        Me.FireBoltRadioButton.UseVisualStyleBackColor = True
+        '
+        'FriendsRadioButton
+        '
+        Me.FriendsRadioButton.AutoSize = True
+        Me.FriendsRadioButton.Location = New System.Drawing.Point(6, 216)
+        Me.FriendsRadioButton.Name = "FriendsRadioButton"
+        Me.FriendsRadioButton.Size = New System.Drawing.Size(63, 19)
+        Me.FriendsRadioButton.TabIndex = 70
+        Me.FriendsRadioButton.Text = "Friends"
+        Me.FriendsRadioButton.UseVisualStyleBackColor = True
+        '
+        'LightRadioButton
+        '
+        Me.LightRadioButton.AutoSize = True
+        Me.LightRadioButton.Location = New System.Drawing.Point(6, 254)
+        Me.LightRadioButton.Name = "LightRadioButton"
+        Me.LightRadioButton.Size = New System.Drawing.Size(52, 19)
+        Me.LightRadioButton.TabIndex = 71
+        Me.LightRadioButton.Text = "Light"
+        Me.LightRadioButton.UseVisualStyleBackColor = True
+        '
+        'MageHandRadioButton
+        '
+        Me.MageHandRadioButton.AutoSize = True
+        Me.MageHandRadioButton.Location = New System.Drawing.Point(6, 292)
+        Me.MageHandRadioButton.Name = "MageHandRadioButton"
+        Me.MageHandRadioButton.Size = New System.Drawing.Size(87, 19)
+        Me.MageHandRadioButton.TabIndex = 72
+        Me.MageHandRadioButton.Text = "Mage Hand"
+        Me.MageHandRadioButton.UseVisualStyleBackColor = True
+        '
+        'MendingRadioButton
+        '
+        Me.MendingRadioButton.AutoSize = True
+        Me.MendingRadioButton.Location = New System.Drawing.Point(114, 45)
+        Me.MendingRadioButton.Name = "MendingRadioButton"
+        Me.MendingRadioButton.Size = New System.Drawing.Size(73, 19)
+        Me.MendingRadioButton.TabIndex = 73
+        Me.MendingRadioButton.Text = "Mending"
+        Me.MendingRadioButton.UseVisualStyleBackColor = True
+        '
+        'MessageRadioButton
+        '
+        Me.MessageRadioButton.AutoSize = True
+        Me.MessageRadioButton.Location = New System.Drawing.Point(116, 83)
+        Me.MessageRadioButton.Name = "MessageRadioButton"
+        Me.MessageRadioButton.Size = New System.Drawing.Size(71, 19)
+        Me.MessageRadioButton.TabIndex = 74
+        Me.MessageRadioButton.Text = "Message"
+        Me.MessageRadioButton.UseVisualStyleBackColor = True
+        '
+        'MinorIllusionRadioButton
+        '
+        Me.MinorIllusionRadioButton.AutoSize = True
+        Me.MinorIllusionRadioButton.Location = New System.Drawing.Point(116, 121)
+        Me.MinorIllusionRadioButton.Name = "MinorIllusionRadioButton"
+        Me.MinorIllusionRadioButton.Size = New System.Drawing.Size(98, 19)
+        Me.MinorIllusionRadioButton.TabIndex = 75
+        Me.MinorIllusionRadioButton.Text = "Minor Illusion"
+        Me.MinorIllusionRadioButton.UseVisualStyleBackColor = True
+        '
+        'PoisonSprayRadioButton
+        '
+        Me.PoisonSprayRadioButton.AutoSize = True
+        Me.PoisonSprayRadioButton.Location = New System.Drawing.Point(116, 159)
+        Me.PoisonSprayRadioButton.Name = "PoisonSprayRadioButton"
+        Me.PoisonSprayRadioButton.Size = New System.Drawing.Size(93, 19)
+        Me.PoisonSprayRadioButton.TabIndex = 76
+        Me.PoisonSprayRadioButton.Text = "Posion Spray"
+        Me.PoisonSprayRadioButton.UseVisualStyleBackColor = True
+        '
+        'PrestidigitationRadioButton
+        '
+        Me.PrestidigitationRadioButton.AutoSize = True
+        Me.PrestidigitationRadioButton.Location = New System.Drawing.Point(116, 197)
+        Me.PrestidigitationRadioButton.Name = "PrestidigitationRadioButton"
+        Me.PrestidigitationRadioButton.Size = New System.Drawing.Size(105, 19)
+        Me.PrestidigitationRadioButton.TabIndex = 77
+        Me.PrestidigitationRadioButton.Text = "Prestidigitation"
+        Me.PrestidigitationRadioButton.UseVisualStyleBackColor = True
+        '
+        'RayofFrostRadioButton
+        '
+        Me.RayofFrostRadioButton.AutoSize = True
+        Me.RayofFrostRadioButton.Location = New System.Drawing.Point(116, 235)
+        Me.RayofFrostRadioButton.Name = "RayofFrostRadioButton"
+        Me.RayofFrostRadioButton.Size = New System.Drawing.Size(87, 19)
+        Me.RayofFrostRadioButton.TabIndex = 78
+        Me.RayofFrostRadioButton.Text = "Ray of Frost"
+        Me.RayofFrostRadioButton.UseVisualStyleBackColor = True
+        '
+        'ShockingGraspRadioButton
+        '
+        Me.ShockingGraspRadioButton.AutoSize = True
+        Me.ShockingGraspRadioButton.Location = New System.Drawing.Point(116, 273)
+        Me.ShockingGraspRadioButton.Name = "ShockingGraspRadioButton"
+        Me.ShockingGraspRadioButton.Size = New System.Drawing.Size(107, 19)
+        Me.ShockingGraspRadioButton.TabIndex = 79
+        Me.ShockingGraspRadioButton.Text = "Shocking Grasp"
+        Me.ShockingGraspRadioButton.UseVisualStyleBackColor = True
+        '
+        'TrueStrikeRadioButton
+        '
+        Me.TrueStrikeRadioButton.AutoSize = True
+        Me.TrueStrikeRadioButton.Location = New System.Drawing.Point(116, 311)
+        Me.TrueStrikeRadioButton.Name = "TrueStrikeRadioButton"
+        Me.TrueStrikeRadioButton.Size = New System.Drawing.Size(79, 19)
+        Me.TrueStrikeRadioButton.TabIndex = 80
+        Me.TrueStrikeRadioButton.Text = "True Strike"
+        Me.TrueStrikeRadioButton.UseVisualStyleBackColor = True
+        '
+        'HighElfCantripSelectionLabel
+        '
+        Me.HighElfCantripSelectionLabel.AutoSize = True
+        Me.HighElfCantripSelectionLabel.Font = New System.Drawing.Font("Bookman Old Style", 20.25!, CType((System.Drawing.FontStyle.Italic Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
+        Me.HighElfCantripSelectionLabel.Location = New System.Drawing.Point(1163, 27)
+        Me.HighElfCantripSelectionLabel.Name = "HighElfCantripSelectionLabel"
+        Me.HighElfCantripSelectionLabel.Size = New System.Drawing.Size(223, 32)
+        Me.HighElfCantripSelectionLabel.TabIndex = 81
+        Me.HighElfCantripSelectionLabel.Text = "High Elf Cantrip"
+        Me.HighElfCantripSelectionLabel.Visible = False
+        '
+        'CantripGroupBox
+        '
+        Me.CantripGroupBox.Controls.Add(Me.ChillTouchRadioButton)
+        Me.CantripGroupBox.Controls.Add(Me.AcidSplashRadioButton)
+        Me.CantripGroupBox.Controls.Add(Me.MendingRadioButton)
+        Me.CantripGroupBox.Controls.Add(Me.TrueStrikeRadioButton)
+        Me.CantripGroupBox.Controls.Add(Me.BladeWardRadioButton)
+        Me.CantripGroupBox.Controls.Add(Me.ShockingGraspRadioButton)
+        Me.CantripGroupBox.Controls.Add(Me.DancingLightsRadioButton)
+        Me.CantripGroupBox.Controls.Add(Me.RayofFrostRadioButton)
+        Me.CantripGroupBox.Controls.Add(Me.FireBoltRadioButton)
+        Me.CantripGroupBox.Controls.Add(Me.PrestidigitationRadioButton)
+        Me.CantripGroupBox.Controls.Add(Me.FriendsRadioButton)
+        Me.CantripGroupBox.Controls.Add(Me.PoisonSprayRadioButton)
+        Me.CantripGroupBox.Controls.Add(Me.LightRadioButton)
+        Me.CantripGroupBox.Controls.Add(Me.MinorIllusionRadioButton)
+        Me.CantripGroupBox.Controls.Add(Me.MessageRadioButton)
+        Me.CantripGroupBox.Controls.Add(Me.MageHandRadioButton)
+        Me.CantripGroupBox.Location = New System.Drawing.Point(1165, 72)
+        Me.CantripGroupBox.Name = "CantripGroupBox"
+        Me.CantripGroupBox.Size = New System.Drawing.Size(236, 339)
+        Me.CantripGroupBox.TabIndex = 82
+        Me.CantripGroupBox.TabStop = False
+        Me.CantripGroupBox.Visible = False
+        '
+        'CantripHelpButton
+        '
+        Me.CantripHelpButton.BackgroundImage = Global.DndApp.My.Resources.Resources.dndhelpicon
+        Me.CantripHelpButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.CantripHelpButton.Location = New System.Drawing.Point(1407, 27)
+        Me.CantripHelpButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.CantripHelpButton.Name = "CantripHelpButton"
+        Me.CantripHelpButton.Size = New System.Drawing.Size(44, 38)
+        Me.CantripHelpButton.TabIndex = 83
+        Me.CantripHelpButton.TabStop = False
+        Me.CantripHelpButton.Visible = False
+        '
+        'FinalSubmitButton
+        '
+        Me.FinalSubmitButton.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.FinalSubmitButton.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.FinalSubmitButton.ForeColor = System.Drawing.Color.DarkRed
+        Me.FinalSubmitButton.Location = New System.Drawing.Point(1163, 479)
+        Me.FinalSubmitButton.Name = "FinalSubmitButton"
+        Me.FinalSubmitButton.Size = New System.Drawing.Size(266, 53)
+        Me.FinalSubmitButton.TabIndex = 84
+        Me.FinalSubmitButton.Text = "Submit Form"
+        Me.FinalSubmitButton.UseVisualStyleBackColor = False
+        Me.FinalSubmitButton.Visible = False
+        '
+        'CantripButton
+        '
+        Me.CantripButton.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.CantripButton.ForeColor = System.Drawing.Color.DarkRed
+        Me.CantripButton.Location = New System.Drawing.Point(1237, 417)
+        Me.CantripButton.Name = "CantripButton"
+        Me.CantripButton.Size = New System.Drawing.Size(75, 23)
+        Me.CantripButton.TabIndex = 85
+        Me.CantripButton.Text = "Finalize"
+        Me.CantripButton.UseVisualStyleBackColor = False
+        Me.CantripButton.Visible = False
+        '
         'CharacterSheetForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1175, 541)
+        Me.ClientSize = New System.Drawing.Size(1478, 541)
+        Me.Controls.Add(Me.CantripButton)
+        Me.Controls.Add(Me.FinalSubmitButton)
+        Me.Controls.Add(Me.CantripHelpButton)
+        Me.Controls.Add(Me.CantripGroupBox)
+        Me.Controls.Add(Me.HighElfCantripSelectionLabel)
         Me.Controls.Add(Me.ProficienciesHelpBox)
         Me.Controls.Add(Me.AllocationHelpBox)
         Me.Controls.Add(Me.StatHelpBox)
@@ -889,6 +1176,9 @@ Partial Class CharacterSheetForm
         CType(Me.StatHelpBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AllocationHelpBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ProficienciesHelpBox, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.CantripGroupBox.ResumeLayout(False)
+        Me.CantripGroupBox.PerformLayout()
+        CType(Me.CantripHelpButton, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -962,4 +1252,25 @@ Partial Class CharacterSheetForm
     Friend WithEvents StatHelpBox As PictureBox
     Friend WithEvents AllocationHelpBox As PictureBox
     Friend WithEvents ProficienciesHelpBox As PictureBox
+    Friend WithEvents AcidSplashRadioButton As RadioButton
+    Friend WithEvents BladeWardRadioButton As RadioButton
+    Friend WithEvents ChillTouchRadioButton As RadioButton
+    Friend WithEvents DancingLightsRadioButton As RadioButton
+    Friend WithEvents FireBoltRadioButton As RadioButton
+    Friend WithEvents FriendsRadioButton As RadioButton
+    Friend WithEvents LightRadioButton As RadioButton
+    Friend WithEvents MageHandRadioButton As RadioButton
+    Friend WithEvents MendingRadioButton As RadioButton
+    Friend WithEvents MessageRadioButton As RadioButton
+    Friend WithEvents MinorIllusionRadioButton As RadioButton
+    Friend WithEvents PoisonSprayRadioButton As RadioButton
+    Friend WithEvents PrestidigitationRadioButton As RadioButton
+    Friend WithEvents RayofFrostRadioButton As RadioButton
+    Friend WithEvents ShockingGraspRadioButton As RadioButton
+    Friend WithEvents TrueStrikeRadioButton As RadioButton
+    Friend WithEvents HighElfCantripSelectionLabel As Label
+    Friend WithEvents CantripGroupBox As GroupBox
+    Friend WithEvents CantripHelpButton As PictureBox
+    Friend WithEvents FinalSubmitButton As Button
+    Friend WithEvents CantripButton As Button
 End Class

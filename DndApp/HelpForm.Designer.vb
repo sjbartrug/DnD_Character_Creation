@@ -63,11 +63,14 @@ Partial Class HelpForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(646, 397)
+        Me.ControlBox = False
         Me.Controls.Add(Me.HelpTitleLabel)
         Me.Controls.Add(Me.closeAttributeHelpButton)
         Me.Controls.Add(Me.HelpTextBox)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "HelpForm"
+        Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show
         Me.Text = "Help Form"
         Me.ResumeLayout(False)
         Me.PerformLayout()
