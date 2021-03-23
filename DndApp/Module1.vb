@@ -21,6 +21,8 @@
 
 	Dim raceNames() As String = {"Human", "High Elf", "Wood Elf", "Tiefling"}
 
+	Dim classNames() As String = {"Barbarian", "Monk", "Fighter"}
+
 	Dim skillNames() As String = {"Acrobatics", "Animal Handling", "Arcana", "Athletics",
 		"Deception", "History", "Insight", "Intimidation", "Investigation", "Medicine",
 		"Nature", "Perception", "Performance", "Persuasion", "Religion", "Sleight of Hand",
@@ -88,6 +90,10 @@
 
 	Public Function GetRaceName(ByVal race As Integer) As String
 		Return raceNames(race)
+	End Function
+
+	Public Function GetClassName(ByVal characterclass As Integer) As String
+		Return classNames(characterclass)
 	End Function
 
 	Public Function GetBaseModifier(ByVal attributeValue As Integer) As Integer

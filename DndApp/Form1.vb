@@ -171,22 +171,22 @@
         Select Case selectedAttributeName
             Case "Strength"
                 labelStrValue.Text = (selectedRollValue + GetRacialBonus(CharacterRace, DndAttribute.STRENGTH))
-                StrMod = Convert.ToInt32(((selectedRollValue + GetRacialBonus(CharacterRace, DndAttribute.STRENGTH)) - 10) / 2)
+                StrMod = Math.Floor(((selectedRollValue + GetRacialBonus(CharacterRace, DndAttribute.STRENGTH)) - 10) / 2)
             Case "Dexterity"
                 labelDexValue.Text = (selectedRollValue + GetRacialBonus(CharacterRace, DndAttribute.DEXTERITY))
-                DexMod = Convert.ToInt32(((selectedRollValue + GetRacialBonus(CharacterRace, DndAttribute.DEXTERITY)) - 10) / 2)
+                DexMod = Math.Floor(((selectedRollValue + GetRacialBonus(CharacterRace, DndAttribute.DEXTERITY)) - 10) / 2)
             Case "Constitution"
                 labelConValue.Text = (selectedRollValue + GetRacialBonus(CharacterRace, DndAttribute.CONSTITUTION))
-                ConMod = Convert.ToInt32(((selectedRollValue + GetRacialBonus(CharacterRace, DndAttribute.CONSTITUTION)) - 10) / 2)
+                ConMod = Math.Floor(((selectedRollValue + GetRacialBonus(CharacterRace, DndAttribute.CONSTITUTION)) - 10) / 2)
             Case "Intelligence"
                 labelIntValue.Text = (selectedRollValue + GetRacialBonus(CharacterRace, DndAttribute.INTELLIGENCE))
-                IntMod = Convert.ToInt32(((selectedRollValue + GetRacialBonus(CharacterRace, DndAttribute.INTELLIGENCE)) - 10) / 2)
+                IntMod = Math.Floor(((selectedRollValue + GetRacialBonus(CharacterRace, DndAttribute.INTELLIGENCE)) - 10) / 2)
             Case "Wisdom"
                 labelWisValue.Text = (selectedRollValue + GetRacialBonus(CharacterRace, DndAttribute.WISDOM))
-                WisMod = Convert.ToInt32(((selectedRollValue + GetRacialBonus(CharacterRace, DndAttribute.WISDOM)) - 10) / 2)
+                WisMod = Math.Floor(((selectedRollValue + GetRacialBonus(CharacterRace, DndAttribute.WISDOM)) - 10) / 2)
             Case "Charisma"
                 labelChaValue.Text = (selectedRollValue + GetRacialBonus(CharacterRace, DndAttribute.CHARISMA))
-                ChaMod = Convert.ToInt32(((selectedRollValue + GetRacialBonus(CharacterRace, DndAttribute.CHARISMA)) - 10) / 2)
+                ChaMod = Math.Floor(((selectedRollValue + GetRacialBonus(CharacterRace, DndAttribute.CHARISMA)) - 10) / 2)
         End Select
 
         ' Remove the currently selected items from the list boxes and list
@@ -316,6 +316,10 @@
             SkillsListBox.Items.Add(skillNames(currentIndex))
         Next
 
+        If CharacterRace.Equals(DndRace.HIGH_ELF) Or CharacterRace.Equals(DndRace.WOOD_ELF) Then
+            SkillsListBox.Items.Remove("Perception")
+        End If
+
         SkillsListBox.SelectedIndex = 0
     End Sub
 
@@ -332,11 +336,13 @@
             SkillsListBox.Items.RemoveAt(SkillsListBox.SelectedIndex)
             SkillsListBox.SelectedIndex = 0
             AssignedSkillsListBox.Items.Add(currentSkill)
+            AssignedSkillsListBox.SelectedIndex = 0
             UndoSkillsButton.Enabled = True
 
             If AssignedSkillsListBox.Items.Count = 2 Then
                 FinalizeSkillsButton.Enabled = True
                 FinalizeSkillsButton.Visible = True
+                AllocateSkillsButton.Enabled = False
             End If
 
         End If
@@ -356,7 +362,7 @@
 
         SkillsListBox.SelectedIndex = 0 ' Reset the selected indices in the list boxes to 0
 
-        AssignedSkillsListBox.Items.RemoveAt(0)
+        AssignedSkillsListBox.Items.RemoveAt(AssignedSkillsListBox.Items.Count - 1)
 
         If AssignedSkillsListBox.Items.Count = 0 Then
             UndoSkillsButton.Enabled = False ' If the stack is now empty, disable the undo button
@@ -406,18 +412,18 @@ be stronger in certain attributes. They will also have access to different abili
 Some races have subraces that further affect their abilities. For example, elves have a further
 choice between wood elves and high elves.
 
-Humans
+Humans:
 Humans are a very versatile race to choose. All of a human's attributes get a small, balanced boost.
 Humans are also multilingual, and they can learn common and any second language they wish. Humans
 are very much a blank slate in terms of character creation.
 
-Elves
+Elves:
 All elves are agile, and they are more suited towards reflex-oriented actions. Elves also have
 more sensitive eyesight and are able to see in darker areas and sense items in their surroundings.
 Additionally, elves are difficult to influence with magic, and they can't fall asleep from it.
 Elves also require less rest than other races. Elves are fluent in common and elvish.
 
-Tieflings
+Tieflings:
 Tieflings are good at using the power of persuasion on others. They are also quick-witted and
 they learn and retain items more effectively. Tieflings have more sensitive eyesight and are
 able to see in darker areas and sense items in their surroundings. Tieflings can tolerate heat
@@ -433,12 +439,12 @@ Tieflings are fluent in common and infernal."
             HelpFormNumberInteger += 1
             Dim SubraceHelpForm As New HelpForm 'Create an instance of a new attribute help form
             SubraceHelpForm.HelpTitleLabel.Text = "How to Pick a Subrace"
-            SubraceHelpForm.HelpTextBox.Text = "High Elf Subrace
+            SubraceHelpForm.HelpTextBox.Text = "High Elf Subrace:
 In addition to the above, high elves are more magically inclined. They start off with knowledge
 of a spell. They also learn and retain items more effectively. Because of this, they are able
 to learn a third language.
 
-Wood Elf Subrace
+Wood Elf Subrace:
 In addition to the above, wood elves are more sensitive and seasoned to their surroundings. They
 move more quickly than other races. They are also good at camoflauging themselves, and they are
 able to maintain a low profile in wooded areas, percipitation, and the like."
@@ -457,7 +463,7 @@ Pick a class for your Dungeons & Dragons character. Depending on your choice, yo
 use certain attributes (like strength or agility) to their advantage. They will also have access 
 to different abilities, weapons, fighting styles, armor, and skills which they exemplify.
 
-Barbarian
+Barbarian:
 Barbarians are a very physical class. They are trained to use a variety of melee weapons and armor,
 but they are also able to defend themselves well when unprotected. Barbarians possess a
 considerable amount of physical power and vitality, and they are better in a pinch with these
@@ -465,11 +471,11 @@ types of situations. Barbarians are vicious, and they use this to their advantag
 to do more damage, protect themselves, and further get themselves out of a pinch. Barbarians
 can exemplify animal handling, athletics, intimidation, nature, perception, and survival.
 
-Beginner Barbarian
+Beginner Barbarian:
 When you are allocating attribute points, strength is the most important. Constitution is also
 important across the board, but it is especially important to a barbarian.
 
-Monk
+Monk:
 Monks are also a very physical class, but they rely more on agility than brute force. They are
 trained to use lighter melee weapons, but they often prefer to protect themselves with their 
 agility instead of armor. Monks possess exemplary agility and strength, and they are better in 
@@ -477,11 +483,11 @@ a pinch with these types of situations. Monks are trained to use their body as a
 damage through their agility and sometimes landing an extra attack. Monks can exemplify acrobatics,
 athletics, history, insight, religion, and stealth.
 
-Beginner Monk
+Beginner Monk:
 When you are allocating attribute points, dexterity is the most important. Wisdom is also
 an important trait for a monk. Constitution is always important, so don't neglect it either.
 
-Fighters
+Fighters:
 Fighters, another physical class, can be adept in using melee weapons, ranged weapons, and armor.
 Fighters typically favor one combat style over another, and they either focus on attacking from
 a distance, protecting themselves and their allies, or excelling at close combat. Fighters also
@@ -490,7 +496,7 @@ of situations. Fighters can sometimes continue battling despite having sustained
 can exemplify acrobatics, animal handling, athletics, history, insight, intimidation, perception,
 and survival.
 
-Beginner Fighter
+Beginner Fighter:
 When you are allocating attribute points, strength and dexterity are equally important. Strength
 will favor a melee-based fighter, and dexterity will favor a ranged-based fighter. Constitution
 is also important, so don't neglect it either.
@@ -535,36 +541,37 @@ can only be used once, so use the higher scores on attributes that are more impo
 and gameplay style. Never neglect your constitution.
 
 What Attributes Do:
-Strength
+
+Strength:
 Strength is used for anything involving a physical application of force. This is useful for executing
 melee attacks, lifting items, carrying a heavier load, or breaking something. Strength also comes in
 handy when navigating difficult terrain. Strength is most important to barbarians and melee-based
 fighters.
 
-Dexterity
+Dexterity:
 Dexterity is good for anything involving reaction time, speed, and a delicate touch. This is useful
 for executing ranged attacks, breaking and entering, stealing, visual distraction, escaping, 
 and being covert. Dexterity also comes in handy when navigating unstable terrain. Dexterity is most
 important to monks and range-based fighters.
 
-Constitution
+Constitution:
 Constitution is good for anything involving endurance, being damaged, or otherwise being able to
 endure threats to one's life. This is useful for going on long journeys, going without basic
 needs, and enduring the effects of things like toxins. Constitution is always important, as it's what
 your character's hit points are partially based on. 
 
-Intelligence
+Intelligence:
 Intelligence is good for anything involving wit, memory, or problem-solving. This is useful for
 solving puzzles, remembering information, remembering how to do something, and impersonating others.
 This can also be used for casting some magical spells.
 
-Wisdom
+Wisdom:
 Wisdom is good for anything involving situational awareness and prudent judgment. This is useful for
 detecting subtle stimuli and evidence, determining another's intentions, aiding someone, and
 determining the most sound decision to make in a situation. This can also be used for casting some
 magical spells.
 
-Charisma
+Charisma:
 Charisma is good for anything involving persuasion, captivation, and information gathering. This is
 useful for distracting others, enticing others, making others let their guard down, being socially
 fluid, spying, and making connections. This can also be used for casting some magical spells.
@@ -610,66 +617,67 @@ pre-populated based on skills your class can be proficient in. When you are play
 skill proficiency allows your character to have a better chance of doing certain actions.
 
 What Skills Do:
-Acrobatics
+
+Acrobatics:
 Acrobatics allows to you navigate narrow and unstable terrain. It also allows you to do things
 a gymnast would do.
 
-Animal Handling
+Animal Handling:
 Animal handling allows you to exert more effective control over animals and assess their demeanor.
 
-Arcana
+Arcana:
 Arcana allows you to know more about alternate realities, spells, and anything related to magic.
 
-Athletics
+Athletics:
 Athletics allows you to navigate difficult terrain. It also helps you avoid hurting yourself when
 going through treacherous physical environments.
 
-Deception
+Deception:
 Deception allows you to effectively mislead, get one over on others, and be a better liar.
 
-History
+History:
 History allows you to know more about past occurences and important background information on
 places and people.
 
-Insight
+Insight:
 Insight allows you to better determine the demeanor of other living things.
 
-Intimidation
+Intimidation:
 Intimidation allows you to better accomplish your goals via threatening others and using aggression.
 
-Investigation
+Investigation:
 Investigation allows you to examine physical evidence and make inferences based on it.
 
-Medicine
+Medicine:
 Medicine allows you to determine what is afflicting others and provide medical care to
 others who are gravely injured.
 
-Nature
+Nature:
 Nature allows you to know more about the environment and the life within it.
 
-Perception
+Perception:
 Perception allows you to better sense external stimuli and pick up on more subtle stimuli.
 
-Performance
+Performance:
 Performance allows you to better captivate others through your actions.
 
-Persuasion
+Persuasion:
 Persuasion allows you to become better at changing the minds of others. In many ways, this is
 the opposite of deception, and it is usually used on those who possess integrity or are in a
 position of authority.
 
-Religion
+Religion:
 Religion allows you to know more about religious practices, icons, and texts.
 
-Sleight of Hand
+Sleight of Hand:
 Sleight of hand is useful for stealing things, hiding things, and doing things requiring a light
 touch undetected.
 
-Stealth
+Stealth:
 Stealth is useful for escaping dangerous situations, remaining covert, and inching close to
 someone without them noticing.
 
-Survival
+Survival:
 Survival allows you to navigate unknown terrain, avoid injurious terrain, and locate and
 subdue animals.
 
@@ -1011,6 +1019,99 @@ this spell hasn’t ended."
     Private Sub FinalSubmitButton_Click(sender As Object, e As EventArgs) Handles FinalSubmitButton.Click
         Dim CharacterSheet As New FinalCharacterSheet
         CharacterSheet.Show()
+        CharacterSheet.PlayerNameLabel.Text = CharacterName
+        CharacterSheet.PlayerRaceLabel.Text = GetRaceName(CharacterRace)
+        CharacterSheet.PlayerClassLabel.Text = GetClassName(CharacterClass)
+
+        CharacterSheet.FinallabelStrValue.Text = finalizedAttributes(DndAttribute.STRENGTH)
+        CharacterSheet.FinallabelChaValue.Text = finalizedAttributes(DndAttribute.CHARISMA)
+        CharacterSheet.FinallabelConValue.Text = finalizedAttributes(DndAttribute.CONSTITUTION)
+        CharacterSheet.FinallabelDexValue.Text = finalizedAttributes(DndAttribute.DEXTERITY)
+        CharacterSheet.FinallabelIntValue.Text = finalizedAttributes(DndAttribute.INTELLIGENCE)
+        CharacterSheet.FinallabelWisValue.Text = finalizedAttributes(DndAttribute.WISDOM)
+
+        If StrMod >= 0 Then
+            CharacterSheet.labelStr.Text += "(+" + StrMod.ToString + ")"
+        Else
+            CharacterSheet.labelStr.Text += "(" + StrMod.ToString + ")"
+        End If
+        If DexMod >= 0 Then
+            CharacterSheet.labelDex.Text += "(+" + DexMod.ToString + ")"
+        Else
+            CharacterSheet.labelDex.Text += "(" + DexMod.ToString + ")"
+        End If
+        If ConMod >= 0 Then
+            CharacterSheet.labelCon.Text += "(+" + ConMod.ToString + ")"
+        Else
+            CharacterSheet.labelCon.Text += "(" + ConMod.ToString + ")"
+        End If
+        If IntMod >= 0 Then
+            CharacterSheet.labelInt.Text += "(+" + IntMod.ToString + ")"
+        Else
+            CharacterSheet.labelInt.Text += "(" + IntMod.ToString + ")"
+        End If
+        If WisMod >= 0 Then
+            CharacterSheet.labelWis.Text += "(+" + WisMod.ToString + ")"
+        Else
+            CharacterSheet.labelWis.Text += "(" + WisMod.ToString + ")"
+        End If
+        If ChaMod >= 0 Then
+            CharacterSheet.labelCha.Text += "(+" + ChaMod.ToString + ")"
+        Else
+            CharacterSheet.labelCha.Text += "(" + ChaMod.ToString + ")"
+        End If
+
+        For I As Integer = 0 To AssignedSkillsListBox.Items.Count - 1
+            CharacterSheet.FinalAssignedSkillsListBox.Items.Add(AssignedSkillsListBox.Items(I))
+        Next
+
+        If CharacterRace = DndRace.TIEFLING Then
+            CharacterSheet.SpellLabel.Visible = True
+            CharacterSheet.CantripLabel.Visible = True
+            CharacterSheet.SpellLabel.Text = "Thaumaturgy"
+        ElseIf CharacterRace = DndRace.HIGH_ELF Then
+            CharacterSheet.SpellLabel.Visible = True
+            CharacterSheet.CantripLabel.Visible = True
+            If AcidSplashRadioButton.Checked = True Then
+                CharacterSheet.SpellLabel.Text = "Acid Splash"
+            ElseIf BladeWardRadioButton.Checked = True Then
+                CharacterSheet.SpellLabel.Text = "Blade Ward"
+            ElseIf ChillTouchRadioButton.Checked = True Then
+                CharacterSheet.SpellLabel.Text = "Chill Touch"
+            ElseIf DancingLightsRadioButton.Checked = True Then
+                CharacterSheet.SpellLabel.Text = "Dancing Lights"
+            ElseIf FireBoltRadioButton.Checked = True Then
+                CharacterSheet.SpellLabel.Text = "Fire Bolt"
+            ElseIf FriendsRadioButton.Checked = True Then
+                CharacterSheet.SpellLabel.Text = "Friends"
+            ElseIf LightRadioButton.Checked = True Then
+                CharacterSheet.SpellLabel.Text = "Light"
+            ElseIf MageHandRadioButton.Checked = True Then
+                CharacterSheet.SpellLabel.Text = "Mage Hand"
+            ElseIf MendingRadioButton.Checked = True Then
+                CharacterSheet.SpellLabel.Text = "Mending"
+            ElseIf MessageRadioButton.Checked = True Then
+                CharacterSheet.SpellLabel.Text = "Message"
+            ElseIf MinorIllusionRadioButton.Checked = True Then
+                CharacterSheet.SpellLabel.Text = "Minor Illusion"
+            ElseIf PoisonSprayRadioButton.Checked = True Then
+                CharacterSheet.SpellLabel.Text = "Poison Spray"
+            ElseIf PrestidigitationRadioButton.Checked = True Then
+                CharacterSheet.SpellLabel.Text = "Prestidigitation"
+            ElseIf RayofFrostRadioButton.Checked = True Then
+                CharacterSheet.SpellLabel.Text = "Ray of Frost"
+            ElseIf ShockingGraspRadioButton.Checked = True Then
+                CharacterSheet.SpellLabel.Text = "Shocking Grasp"
+            ElseIf TrueStrikeRadioButton.Checked = True Then
+                CharacterSheet.SpellLabel.Text = "True Strike"
+            End If
+
+        End If
+
+        If CharacterRace.Equals(DndRace.HIGH_ELF) Or CharacterRace.Equals(DndRace.WOOD_ELF) Then
+            CharacterSheet.FinalAssignedSkillsListBox.Items.Add("Perception")
+        End If
+
     End Sub
 
 End Class

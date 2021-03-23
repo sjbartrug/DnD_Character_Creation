@@ -26,9 +26,6 @@ Partial Class FinalCharacterSheet
         Me.FinalPlayerNameLabel = New System.Windows.Forms.Label()
         Me.FinalPlayerRaceLabel = New System.Windows.Forms.Label()
         Me.FinalPlayerClassLabel = New System.Windows.Forms.Label()
-        Me.FinalPlayerClassTextBox = New System.Windows.Forms.TextBox()
-        Me.FinalPlayerRaceTextBox = New System.Windows.Forms.TextBox()
-        Me.FinalPlayerNameTextBox = New System.Windows.Forms.TextBox()
         Me.AttributesGroupBox = New System.Windows.Forms.GroupBox()
         Me.labelStr = New System.Windows.Forms.Label()
         Me.labelDex = New System.Windows.Forms.Label()
@@ -42,6 +39,13 @@ Partial Class FinalCharacterSheet
         Me.FinallabelIntValue = New System.Windows.Forms.Label()
         Me.FinallabelWisValue = New System.Windows.Forms.Label()
         Me.FinallabelChaValue = New System.Windows.Forms.Label()
+        Me.FinalAssignedSkillsListBox = New System.Windows.Forms.ListBox()
+        Me.FinalProficienciesLabel = New System.Windows.Forms.Label()
+        Me.CantripLabel = New System.Windows.Forms.Label()
+        Me.PlayerNameLabel = New System.Windows.Forms.Label()
+        Me.PlayerRaceLabel = New System.Windows.Forms.Label()
+        Me.PlayerClassLabel = New System.Windows.Forms.Label()
+        Me.SpellLabel = New System.Windows.Forms.Label()
         CType(Me.DnDLogoImage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.AttributesGroupBox.SuspendLayout()
         Me.SuspendLayout()
@@ -60,7 +64,7 @@ Partial Class FinalCharacterSheet
         '
         Me.FinalPlayerNameLabel.AutoSize = True
         Me.FinalPlayerNameLabel.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.FinalPlayerNameLabel.Location = New System.Drawing.Point(336, 3)
+        Me.FinalPlayerNameLabel.Location = New System.Drawing.Point(335, 11)
         Me.FinalPlayerNameLabel.Name = "FinalPlayerNameLabel"
         Me.FinalPlayerNameLabel.Size = New System.Drawing.Size(66, 25)
         Me.FinalPlayerNameLabel.TabIndex = 57
@@ -70,7 +74,7 @@ Partial Class FinalCharacterSheet
         '
         Me.FinalPlayerRaceLabel.AutoSize = True
         Me.FinalPlayerRaceLabel.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.FinalPlayerRaceLabel.Location = New System.Drawing.Point(336, 35)
+        Me.FinalPlayerRaceLabel.Location = New System.Drawing.Point(345, 43)
         Me.FinalPlayerRaceLabel.Name = "FinalPlayerRaceLabel"
         Me.FinalPlayerRaceLabel.Size = New System.Drawing.Size(56, 25)
         Me.FinalPlayerRaceLabel.TabIndex = 58
@@ -80,35 +84,11 @@ Partial Class FinalCharacterSheet
         '
         Me.FinalPlayerClassLabel.AutoSize = True
         Me.FinalPlayerClassLabel.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.FinalPlayerClassLabel.Location = New System.Drawing.Point(336, 67)
+        Me.FinalPlayerClassLabel.Location = New System.Drawing.Point(342, 75)
         Me.FinalPlayerClassLabel.Name = "FinalPlayerClassLabel"
         Me.FinalPlayerClassLabel.Size = New System.Drawing.Size(59, 25)
         Me.FinalPlayerClassLabel.TabIndex = 59
         Me.FinalPlayerClassLabel.Text = "Class:"
-        '
-        'FinalPlayerClassTextBox
-        '
-        Me.FinalPlayerClassTextBox.Enabled = False
-        Me.FinalPlayerClassTextBox.Location = New System.Drawing.Point(408, 71)
-        Me.FinalPlayerClassTextBox.Name = "FinalPlayerClassTextBox"
-        Me.FinalPlayerClassTextBox.Size = New System.Drawing.Size(100, 23)
-        Me.FinalPlayerClassTextBox.TabIndex = 62
-        '
-        'FinalPlayerRaceTextBox
-        '
-        Me.FinalPlayerRaceTextBox.Enabled = False
-        Me.FinalPlayerRaceTextBox.Location = New System.Drawing.Point(408, 37)
-        Me.FinalPlayerRaceTextBox.Name = "FinalPlayerRaceTextBox"
-        Me.FinalPlayerRaceTextBox.Size = New System.Drawing.Size(100, 23)
-        Me.FinalPlayerRaceTextBox.TabIndex = 61
-        '
-        'FinalPlayerNameTextBox
-        '
-        Me.FinalPlayerNameTextBox.Enabled = False
-        Me.FinalPlayerNameTextBox.Location = New System.Drawing.Point(408, 3)
-        Me.FinalPlayerNameTextBox.Name = "FinalPlayerNameTextBox"
-        Me.FinalPlayerNameTextBox.Size = New System.Drawing.Size(100, 23)
-        Me.FinalPlayerNameTextBox.TabIndex = 60
         '
         'AttributesGroupBox
         '
@@ -126,7 +106,7 @@ Partial Class FinalCharacterSheet
         Me.AttributesGroupBox.Controls.Add(Me.FinallabelChaValue)
         Me.AttributesGroupBox.Location = New System.Drawing.Point(12, 129)
         Me.AttributesGroupBox.Name = "AttributesGroupBox"
-        Me.AttributesGroupBox.Size = New System.Drawing.Size(362, 165)
+        Me.AttributesGroupBox.Size = New System.Drawing.Size(389, 165)
         Me.AttributesGroupBox.TabIndex = 63
         Me.AttributesGroupBox.TabStop = False
         '
@@ -244,15 +224,86 @@ Partial Class FinalCharacterSheet
         Me.FinallabelChaValue.TabIndex = 43
         Me.FinallabelChaValue.Text = "0"
         '
+        'FinalAssignedSkillsListBox
+        '
+        Me.FinalAssignedSkillsListBox.FormattingEnabled = True
+        Me.FinalAssignedSkillsListBox.ItemHeight = 15
+        Me.FinalAssignedSkillsListBox.Location = New System.Drawing.Point(12, 360)
+        Me.FinalAssignedSkillsListBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.FinalAssignedSkillsListBox.Name = "FinalAssignedSkillsListBox"
+        Me.FinalAssignedSkillsListBox.Size = New System.Drawing.Size(221, 79)
+        Me.FinalAssignedSkillsListBox.TabIndex = 64
+        '
+        'FinalProficienciesLabel
+        '
+        Me.FinalProficienciesLabel.AutoSize = True
+        Me.FinalProficienciesLabel.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.FinalProficienciesLabel.Location = New System.Drawing.Point(12, 326)
+        Me.FinalProficienciesLabel.Name = "FinalProficienciesLabel"
+        Me.FinalProficienciesLabel.Size = New System.Drawing.Size(119, 21)
+        Me.FinalProficienciesLabel.TabIndex = 65
+        Me.FinalProficienciesLabel.Text = "Proficient Skills:"
+        '
+        'CantripLabel
+        '
+        Me.CantripLabel.AutoSize = True
+        Me.CantripLabel.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.CantripLabel.Location = New System.Drawing.Point(262, 377)
+        Me.CantripLabel.Name = "CantripLabel"
+        Me.CantripLabel.Size = New System.Drawing.Size(85, 30)
+        Me.CantripLabel.TabIndex = 66
+        Me.CantripLabel.Text = "Cantrip:"
+        Me.CantripLabel.Visible = False
+        '
+        'PlayerNameLabel
+        '
+        Me.PlayerNameLabel.AutoSize = True
+        Me.PlayerNameLabel.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.PlayerNameLabel.Location = New System.Drawing.Point(408, 11)
+        Me.PlayerNameLabel.Name = "PlayerNameLabel"
+        Me.PlayerNameLabel.Size = New System.Drawing.Size(0, 25)
+        Me.PlayerNameLabel.TabIndex = 68
+        '
+        'PlayerRaceLabel
+        '
+        Me.PlayerRaceLabel.AutoSize = True
+        Me.PlayerRaceLabel.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.PlayerRaceLabel.Location = New System.Drawing.Point(408, 43)
+        Me.PlayerRaceLabel.Name = "PlayerRaceLabel"
+        Me.PlayerRaceLabel.Size = New System.Drawing.Size(0, 25)
+        Me.PlayerRaceLabel.TabIndex = 69
+        '
+        'PlayerClassLabel
+        '
+        Me.PlayerClassLabel.AutoSize = True
+        Me.PlayerClassLabel.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.PlayerClassLabel.Location = New System.Drawing.Point(408, 75)
+        Me.PlayerClassLabel.Name = "PlayerClassLabel"
+        Me.PlayerClassLabel.Size = New System.Drawing.Size(0, 25)
+        Me.PlayerClassLabel.TabIndex = 70
+        '
+        'SpellLabel
+        '
+        Me.SpellLabel.AutoSize = True
+        Me.SpellLabel.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.SpellLabel.Location = New System.Drawing.Point(353, 382)
+        Me.SpellLabel.Name = "SpellLabel"
+        Me.SpellLabel.Size = New System.Drawing.Size(0, 25)
+        Me.SpellLabel.TabIndex = 71
+        '
         'FinalCharacterSheet
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(531, 450)
+        Me.Controls.Add(Me.SpellLabel)
+        Me.Controls.Add(Me.PlayerClassLabel)
+        Me.Controls.Add(Me.PlayerRaceLabel)
+        Me.Controls.Add(Me.PlayerNameLabel)
+        Me.Controls.Add(Me.CantripLabel)
+        Me.Controls.Add(Me.FinalProficienciesLabel)
+        Me.Controls.Add(Me.FinalAssignedSkillsListBox)
         Me.Controls.Add(Me.AttributesGroupBox)
-        Me.Controls.Add(Me.FinalPlayerClassTextBox)
-        Me.Controls.Add(Me.FinalPlayerRaceTextBox)
-        Me.Controls.Add(Me.FinalPlayerNameTextBox)
         Me.Controls.Add(Me.FinalPlayerClassLabel)
         Me.Controls.Add(Me.FinalPlayerRaceLabel)
         Me.Controls.Add(Me.FinalPlayerNameLabel)
@@ -271,9 +322,6 @@ Partial Class FinalCharacterSheet
     Friend WithEvents FinalPlayerNameLabel As Label
     Friend WithEvents FinalPlayerRaceLabel As Label
     Friend WithEvents FinalPlayerClassLabel As Label
-    Friend WithEvents FinalPlayerClassTextBox As TextBox
-    Friend WithEvents FinalPlayerRaceTextBox As TextBox
-    Friend WithEvents FinalPlayerNameTextBox As TextBox
     Friend WithEvents AttributesGroupBox As GroupBox
     Friend WithEvents labelStr As Label
     Friend WithEvents labelDex As Label
@@ -287,4 +335,11 @@ Partial Class FinalCharacterSheet
     Friend WithEvents FinallabelIntValue As Label
     Friend WithEvents FinallabelWisValue As Label
     Friend WithEvents FinallabelChaValue As Label
+    Friend WithEvents FinalAssignedSkillsListBox As ListBox
+    Friend WithEvents FinalProficienciesLabel As Label
+    Friend WithEvents CantripLabel As Label
+    Friend WithEvents PlayerNameLabel As Label
+    Friend WithEvents PlayerRaceLabel As Label
+    Friend WithEvents PlayerClassLabel As Label
+    Friend WithEvents SpellLabel As Label
 End Class
